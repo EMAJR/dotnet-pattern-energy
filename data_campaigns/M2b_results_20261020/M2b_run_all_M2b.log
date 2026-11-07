@@ -1,0 +1,69 @@
+
+=================== 0. pre-flight checks (10:39:58) ===================
+power profile: performance  (keep the same profile as last time: performance)
+pre-flight OK
+
+=================== 1. patch + build + equivalence (10:40:03) ===================
+Program.cs patched for phase B: ComposedTopo, runktopo, equivtopo added (existing verbs untouched).
+Next:  dotnet build -c Release && ./bin/Release/net8.0/proto equivtopo
+build + equivalence OK
+
+=================== code_AB (10:40:11) ===================
+governor=performance on every core | no_turbo=1 | pinned core=7
+ALL EQUIVALENT: 66 configs preserve behaviour (cpu+mem).
+ALL EQUIVALENT (rep=1): 66 configs preserve behaviour (cpu+mem).
+  pass 1/10 (10:57:03)
+  pass 2/10 (11:13:53)
+  pass 3/10 (11:30:39)
+  pass 4/10 (11:47:29)
+  pass 5/10 (12:04:20)
+  pass 6/10 (12:21:07)
+  pass 7/10 (12:38:07)
+  pass 8/10 (12:54:56)
+  pass 9/10 (13:11:48)
+  pass 10/10 (13:28:39)
+=== SUMMARY (full analysis on my side) ===
+--- cpu
+  old: baseline   5.965 J  FaBuMe +105.4  BuObMe  +95.5  BuMe  +47.4  StDeAd  +31.6
+  new: baseline   6.490 J  FaBuMe +107.4  BuObMe  +97.8  BuMe  +53.8  StDeAd  +19.2
+--- mem
+  old: baseline  51.471 J  FaBuMe   +8.7  BuObMe   +8.8  BuMe   +5.3  StDeAd   +1.8
+  new: baseline  16.022 J  FaBuMe  +24.8  BuObMe  +32.3  BuMe  +25.3  StDeAd   -7.9
+
+C1: old == new (within noise)  |  C2: old != new
+=== DONE: code_ab.csv, code_ab_meta.txt ===
+>> code_AB OK
+
+=================== B4_topology (13:28:39) ===================
+regime=cpu -> B4_energy.csv, B4_perf.csv
+perf events: cycles,instructions,branches,branch-misses,L1-dcache-load-misses,dTLB-load-misses
+governor=performance on every core | no_turbo=1 | pinned core=7
+ALL EQUIVALENT (topo): 340 config x topology x dup combinations preserve behaviour (cpu+mem).
+=== 1. energy + time, paired per (config, topology) (~35 min) ===
+  [energy] pass 1/8 (13:33:12)
+  [energy] pass 2/8 (13:37:37)
+  [energy] pass 3/8 (13:42:03)
+  [energy] pass 4/8 (13:46:30)
+  [energy] pass 5/8 (13:50:57)
+  [energy] pass 6/8 (13:55:23)
+  [energy] pass 7/8 (13:59:51)
+  [energy] pass 8/8 (14:04:18)
+=== 2. hardware counters (~20 min) ===
+  [perf] pass 1/3 (14:10:02)
+  [perf] pass 2/3 (14:15:43)
+  [perf] pass 3/3 (14:21:24)
+=== SUMMARY ===
+comp    | topo0: dE / dT / instr   topo1: dE / dT / instr   topo2: dE / dT / instr
+FaBu    |    +53.6 /  +59.1 /  25.1    -17.1 /   -9.7 /   0.1     -1.3 /   -0.4 /   0.1
+BuMe    |    +58.8 /  +59.4 /  25.2    -18.6 /  -15.6 /   0.1     +3.5 /   +9.7 /   0.1
+BuOb    |    +54.0 /  +60.3 /  25.1     -1.9 /   -1.0 /  -0.0     -4.6 /   -0.1 /   0.0
+ObMe    |    +56.4 /  +56.2 /  25.1    -13.6 /  -15.4 /  -0.0     -0.2 /   +1.4 /  -0.0
+FaBuMe  |   +104.2 / +105.1 /  39.2    -29.6 /  -23.7 /   0.0     -0.3 /   +7.5 /   0.1
+BuObMe  |    +99.5 / +109.6 /  39.2    -21.4 /  -17.3 /   0.1     -2.8 /   +9.0 /   0.1
+StDeAd  |    +12.5 /  +15.5 /   0.0     -6.0 /   -0.1 /   0.0    -46.4 /  -35.8 /  -0.0
+
+T1: topo 1-2 instr ~<=3 and dE collapses | T2: instr drops, dE stays | T3: instr does not drop
+=== DONE. Send me B4_energy.csv and B4_perf.csv ===
+>> B4_topology OK
+
+=================== 4. packaging (14:21:24) ===================

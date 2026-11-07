@@ -1,0 +1,26 @@
+\begin{table}[t]
+\caption{Sensitivity to the reference kernel code (same machine, same evening, the two versions interleaved run by run; 10 repetitions). The current version adds a loop-count field and a loop whose body never executes at $w = 1$; both versions produce identical checksums. $E_0$: baseline energy (J per 1000 tasks); $t_0$: baseline time (s); \emph{instr.}: retired instructions per kernel iteration of the baseline (process start-up removed); $\delta$ in points of the version's own baseline; $|z|$: difference between versions over its bootstrap standard error.}
+\label{tab:kernel}
+\centering\small
+\begin{tabular}{llrrrrrr}
+\toprule
+& \textbf{Kernel} & $E_0$ & $t_0$ & \textbf{instr.} & \texttt{FaBuMe} & \texttt{BuMe} & \texttt{StDeAd}\\
+\midrule
+\multirow{3}{*}{M1, $W_{\text{CPU}}$} & previous & 6.76 & 1.13 & 33.9 & $+100.0$ & $+59.3$ & $-7.1$\\
+ & current & 7.48 & 1.21 & 42.1 & $+62.5$ & $+38.1$ & $-2.8$\\
+ & $|z|$ & & & & 4.6 & 4.9 & 0.7\\
+\midrule
+\multirow{3}{*}{M2, $W_{\text{CPU}}$} & previous & 5.96 & 1.61 & 34.0 & $+105.4$ & $+47.4$ & $+31.6$\\
+ & current & 6.49 & 1.75 & 42.1 & $+107.4$ & $+53.8$ & $+19.2$\\
+ & $|z|$ & & & & 0.3 & 1.8 & 2.7\\
+\midrule
+\multirow{3}{*}{M1, $W_{\text{MEM}}$} & previous & 25.51 & 4.47 & 43.4 & $+13.9$ & $+10.2$ & $-2.7$\\
+ & current & 20.73 & 3.20 & 52.5 & $+27.3$ & $+21.3$ & $-9.2$\\
+ & $|z|$ & & & & 1.1 & 1.7 & 1.9\\
+\midrule
+\multirow{3}{*}{M2, $W_{\text{MEM}}$} & previous & 51.47 & 15.52 & 43.8 & $+8.7$ & $+5.3$ & $+1.8$\\
+ & current & 16.02 & 3.84 & 52.5 & $+24.8$ & $+25.3$ & $-7.9$\\
+ & $|z|$ & & & & 6.8 & 13.0 & 4.3\\
+\bottomrule
+\end{tabular}
+\end{table}

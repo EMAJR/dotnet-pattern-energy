@@ -1,0 +1,31 @@
+\begin{table*}[t]
+\caption{Decomposition of the interaction in absolute energy (nJ per kernel iteration; 95\% bootstrap intervals in brackets). $\Delta E_{\text{int}} = \delta \cdot E_0$ is split exactly into \emph{work}, the instruction surplus $\Delta I_{\text{int}}$ valued at an energy per instruction, and two \emph{context} terms, the change in time per instruction and the change in power of the configurations involved (two-factor logarithmic mean Divisia split). The split between work and context depends on the energy per instruction used to value the surplus: \emph{base} uses the baseline's (main convention, under which the three terms add up to $\Delta E_{\text{int}}$), \emph{conf.} the configurations' own, \emph{Shapley} their midpoint. \texttt{FaBuMe} unless stated otherwise; sources: Table~\ref{tab:results_delta} (regime), Table~\ref{tab:kernel} (kernel code), Table~\ref{tab:topology} (topology), the weight-sweep counter runs (baseline weight), Table~\ref{tab:dispatch} (duplicated layers) and Section~\ref{subsec:res_jit} (JIT configuration). Instruction counts come from counter runs of the same binaries; they reproduce to within $0.1$ instruction per iteration across protocols.}
+\label{tab:decomposition}
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{llrrrrrrrrr}
+\toprule
+& & $\delta$ & $E_0$ & $\Delta I_{\text{int}}$ & $\Delta E_{\text{int}}$ & \multicolumn{3}{c}{\textbf{Work} (nJ)} & \textbf{Time per} & \textbf{Power}\\
+\cmidrule(lr){7-9}
+\textbf{Situation} & \textbf{Configuration} & (points) & (nJ) & (instr.) & (nJ) & base & conf. & Shapley & \textbf{instr.} (nJ) & (nJ)\\
+\midrule
+Regime & M1, $W_{\mathrm{CPU}}$ & $+66.7$ & 39.1 & 39.2 & $+26.1$ {\scriptsize$[+24.5, +28.9]$} & $+36.4$ & $+29.8$ & $+33.1$ & $-13.4$ {\scriptsize$[-14.9, -11.8]$} & $+3.1$ {\scriptsize$[+0.8, +6.2]$}\\
+ & M1, $W_{\mathrm{MEM}}$ & $+19.6$ & 103.1 & 39.4 & $+20.2$ {\scriptsize$[+17.3, +27.0]$} & $+77.3$ & $+24.3$ & $+50.8$ & $-56.0$ {\scriptsize$[-57.3, -54.1]$} & $-1.1$ {\scriptsize$[-4.5, +6.4]$}\\
+\midrule
+Kernel code & M1, previous kernel & $+100.0$ & 33.8 & 39.0 & $+33.8$ {\scriptsize$[+28.0, +35.3]$} & $+38.9$ & $+30.4$ & $+34.6$ & $-10.5$ {\scriptsize$[-11.9, -10.0]$} & $+5.4$ {\scriptsize$[-0.7, +7.8]$}\\
+ & M1, current kernel & $+62.5$ & 37.4 & 39.1 & $+23.4$ {\scriptsize$[+20.8, +26.9]$} & $+34.7$ & $+26.3$ & $+30.5$ & $-13.1$ {\scriptsize$[-13.7, -12.4]$} & $+1.7$ {\scriptsize$[-0.6, +5.3]$}\\
+\midrule
+Call-site topology & M2, shared site & $+96.8$ & 34.1 & 39.2 & $+33.0$ {\scriptsize$[+30.6, +35.7]$} & $+31.7$ & $+27.6$ & $+29.6$ & $+4.1$ {\scriptsize$[+3.6, +4.4]$} & $-2.8$ {\scriptsize$[-5.3, +0.1]$}\\
+ & M2, one site per layer & $-22.6$ & 33.9 & 0.0 & $-7.7$ {\scriptsize$[-9.8, -5.2]$} & $+0.0$ & $+0.9$ & $+0.5$ & $-7.8$ {\scriptsize$[-8.3, -7.5]$} & $+0.2$ {\scriptsize$[-1.9, +2.5]$}\\
+\midrule
+Baseline weight & M1, $w = 8$, \texttt{FaBuMe} & $+8.4$ & 155.0 & 39.1 & $+13.0$ {\scriptsize$[-15.5, +40.5]$} & $+65.6$ & $+31.1$ & $+48.4$ & $-71.3$ {\scriptsize$[-82.6, -60.9]$} & $+18.7$ {\scriptsize$[-9.8, +51.8]$}\\
+ & M1, $w = 8$, \texttt{StDeAd} & $-25.1$ & 155.0 & -0.1 & $-38.9$ {\scriptsize$[-59.3, -27.7]$} & $-0.2$ & $-11.4$ & $-5.8$ & $-43.8$ {\scriptsize$[-53.2, -39.9]$} & $+5.1$ {\scriptsize$[-13.3, +20.8]$}\\
+\midrule
+Duplicated layers & M1, \texttt{Bu}$\times 3$ & $+44.2$ & 36.2 & 6.2 & $+16.0$ {\scriptsize$[+11.9, +20.0]$} & $+5.3$ & $+15.8$ & $+10.6$ & $+2.5$ {\scriptsize$[-0.0, +4.1]$} & $+8.2$ {\scriptsize$[+3.2, +12.1]$}\\
+ & M1, \texttt{BuMe} & $+45.2$ & 36.2 & 25.1 & $+16.4$ {\scriptsize$[+13.4, +22.6]$} & $+21.6$ & $+17.9$ & $+19.8$ & $-9.3$ {\scriptsize$[-10.2, -8.0]$} & $+4.0$ {\scriptsize$[+0.4, +10.2]$}\\
+\midrule
+JIT configuration & M1, TC = 0 (measured) & $+80.1$ & 36.2 & 39.2 & $+29.0$ {\scriptsize$[+24.2, +35.7]$} & $+33.7$ & $+30.2$ & $+32.0$ & $-12.3$ {\scriptsize$[-13.3, -10.6]$} & $+7.6$ {\scriptsize$[+2.4, +14.7]$}\\
+ & M1, default .NET 8 configuration & $+270.3$ & 20.2 & 53.1 & $+54.6$ {\scriptsize$[+38.3, +61.5]$} & $+38.6$ & $+47.4$ & $+43.0$ & $+6.5$ {\scriptsize$[+2.7, +13.6]$} & $+9.5$ {\scriptsize$[-8.4, +17.3]$}\\
+\bottomrule
+\end{tabular}}
+\end{table*}

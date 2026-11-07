@@ -1,0 +1,8 @@
+date: 19 أكتوبر, 2026 +00 19:41:58
+Architecture:                            x86_64
+CPU(s):                                  8
+Vendor ID:                               GenuineIntel
+Model name:                              11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz
+CPU(s) scaling MHz:                      29%
+Linux machine2 6.8.0-146-generic #146-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep  3 16:12:30 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+8.0.131

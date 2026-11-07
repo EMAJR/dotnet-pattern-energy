@@ -1,0 +1,21 @@
+\begin{table}[t]
+\caption{Isolated energy signatures $\rho_p$ of the seven patterns (paired total-energy ratio against the reference baseline, median over 15 runs; current kernel code: Machine~1 matrix re-run, Machine~2 second matrix). These values feed the additive prediction $\rho_{\text{additive}}(C) = 1 + \sum_{p \in C}(\rho_p - 1)$.}
+\label{tab:signatures}
+\centering \small
+\begin{tabular}{llcccc}
+\toprule
+& & \multicolumn{2}{c}{$W_{\text{CPU}}$} & \multicolumn{2}{c}{$W_{\text{MEM}}$}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+\textbf{Pattern} & \textbf{Type} & \textbf{M1} & \textbf{M2} & \textbf{M1} & \textbf{M2}\\
+\midrule
+Strategy (\texttt{St}) & indirection & 1.734 & 1.518 & 1.305 & 1.397\\
+Decorator (\texttt{De}) & indirection & 1.330 & 1.293 & 1.168 & 1.229\\
+Adapter (\texttt{Ad}) & indirection & 1.925 & 1.786 & 1.486 & 1.668\\
+\midrule
+Factory (\texttt{Fa}) & allocating & 1.502 & 1.313 & 1.273 & 1.312\\
+Builder (\texttt{Bu}) & allocating & 2.445 & 2.332 & 1.976 & 2.160\\
+Observer (\texttt{Ob}) & allocating & 1.582 & 1.364 & 1.329 & 1.458\\
+Memento (\texttt{Me}) & allocating & 1.529 & 1.360 & 1.318 & 1.440\\
+\bottomrule
+\end{tabular}
+\end{table}

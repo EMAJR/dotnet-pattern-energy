@@ -1,0 +1,1628 @@
+; Assembly listing for method ComposedTopo:RunShared(int):double:this (Instrumented Tier0)
+; Emitting BLENDED_CODE for X64 with AVX - Unix
+; Instrumented Tier0 code
+; rbp based frame
+; partially interruptible
+
+G_M000_IG01:                ;; offset=0x0000
+       push     rbp
+       sub      rsp, 224
+       vzeroupper 
+       lea      rbp, [rsp+0xE0]
+       xor      eax, eax
+       mov      qword ptr [rbp-0xD8], rax
+       vxorps   xmm8, xmm8, xmm8
+       mov      rax, -144
+       vmovdqa  xmmword ptr [rbp+rax-0x40], xmm8
+       vmovdqa  xmmword ptr [rbp+rax-0x30], xmm8
+       vmovdqa  xmmword ptr [rbp+rax-0x20], xmm8
+       add      rax, 48
+       jne      SHORT  -5 instr
+       mov      qword ptr [rbp-0x40], rax
+       mov      gword ptr [rbp-0x30], rdi
+       mov      dword ptr [rbp-0x34], esi
+ 
+G_M000_IG02:                ;; offset=0x004E
+       xor      edi, edi
+       mov      qword ptr [rbp-0x40], rdi
+       xor      edi, edi
+       mov      dword ptr [rbp-0x44], edi
+       xor      edi, edi
+       mov      dword ptr [rbp-0x48], edi
+       xor      edi, edi
+       mov      dword ptr [rbp-0x4C], edi
+       mov      dword ptr [rbp-0xA8], 0x3E8
+       jmp      SHORT G_M000_IG04
+ 
+G_M000_IG03:                ;; offset=0x006F
+       mov      rdi, 0x745198BAB560
+       call     CORINFO_HELP_COUNTPROFILE32
+       mov      rdi, gword ptr [rbp-0x30]
+       mov      rdi, gword ptr [rdi+0x10]
+       mov      esi, dword ptr [rbp-0x4C]
+       cmp      esi, dword ptr [rdi+0x08]
+       jae      G_M000_IG32
+       mov      eax, esi
+       lea      rdi, bword ptr [rdi+8*rax+0x10]
+       mov      rdi, gword ptr [rdi]
+       mov      gword ptr [rbp-0x78], rdi
+       mov      rdi, gword ptr [rbp-0x78]
+       mov      rsi, 0x745198BAB568
+       call     CORINFO_HELP_CLASSPROFILE32
+       mov      rdi, gword ptr [rbp-0x78]
+       mov      gword ptr [rbp-0xB0], rdi
+       mov      rdi, gword ptr [rbp-0xB0]
+       mov      r11, 0x745197C70010
+       xor      esi, esi
+       call     [r11]ISide:BlockStart(int):this
+       mov      edi, dword ptr [rbp-0x4C]
+       inc      edi
+       mov      dword ptr [rbp-0x4C], edi
+ 
+G_M000_IG04:                ;; offset=0x00DC
+       mov      edi, dword ptr [rbp-0xA8]
+       dec      edi
+       mov      dword ptr [rbp-0xA8], edi
+       cmp      dword ptr [rbp-0xA8], 0
+       jg       SHORT G_M000_IG06
+ 
+G_M000_IG05:                ;; offset=0x00F3
+       lea      rdi, [rbp-0xA8]
+       mov      esi, 36
+       call     CORINFO_HELP_PATCHPOINT
+ 
+G_M000_IG06:                ;; offset=0x0104
+       mov      edi, dword ptr [rbp-0x4C]
+       mov      rax, gword ptr [rbp-0x30]
+       mov      rax, gword ptr [rax+0x10]
+       cmp      edi, dword ptr [rax+0x08]
+       jl       G_M000_IG03
+       xor      edi, edi
+       mov      dword ptr [rbp-0x50], edi
+       jmp      G_M000_IG22
+ 
+G_M000_IG07:                ;; offset=0x0122
+       mov      rdi, gword ptr [rbp-0x30]
+       mov      rdi, gword ptr [rdi+0x08]
+       mov      gword ptr [rbp-0x80], rdi
+       mov      rdi, gword ptr [rbp-0x80]
+       mov      rsi, 0x745198BAB670
+       call     CORINFO_HELP_CLASSPROFILE32
+       mov      rdi, gword ptr [rbp-0x80]
+       mov      gword ptr [rbp-0xB8], rdi
+       mov      rdi, gword ptr [rbp-0xB8]
+       mov      esi, dword ptr [rbp-0x50]
+       mov      r11, 0x745197C70018
+       call     [r11]ICompute:Compute(int):double:this
+       vmovsd   qword ptr [rbp-0x58], xmm0
+       xor      edi, edi
+       mov      dword ptr [rbp-0x5C], edi
+       jmp      SHORT G_M000_IG09
+ 
+G_M000_IG08:                ;; offset=0x016F
+       mov      rdi, 0x745198BAB778
+       call     CORINFO_HELP_COUNTPROFILE32
+       mov      rdi, gword ptr [rbp-0x30]
+       mov      rdi, gword ptr [rdi+0x10]
+       mov      esi, dword ptr [rbp-0x5C]
+       cmp      esi, dword ptr [rdi+0x08]
+       jae      G_M000_IG32
+       mov      eax, esi
+       lea      rdi, bword ptr [rdi+8*rax+0x10]
+       mov      rdi, gword ptr [rdi]
+       mov      gword ptr [rbp-0x88], rdi
+       mov      rdi, gword ptr [rbp-0x88]
+       mov      rsi, 0x745198BAB780
+       call     CORINFO_HELP_CLASSPROFILE32
+       mov      rdi, gword ptr [rbp-0x88]
+       mov      gword ptr [rbp-0xC0], rdi
+       mov      rdi, gword ptr [rbp-0xC0]
+       vmovsd   xmm0, qword ptr [rbp-0x58]
+       mov      esi, dword ptr [rbp-0x50]
+       mov      r11, 0x745197C70020
+       call     [r11]ISide:Step(int,double):this
+       mov      edi, dword ptr [rbp-0x5C]
+       inc      edi
+       mov      dword ptr [rbp-0x5C], edi
+ 
+G_M000_IG09:                ;; offset=0x01EB
+       mov      edi, dword ptr [rbp-0xA8]
+       dec      edi
+       mov      dword ptr [rbp-0xA8], edi
+       cmp      dword ptr [rbp-0xA8], 0
+       jg       SHORT G_M000_IG11
+ 
+G_M000_IG10:                ;; offset=0x0202
+       lea      rdi, [rbp-0xA8]
+       mov      esi, 99
+       call     CORINFO_HELP_PATCHPOINT
+ 
+G_M000_IG11:                ;; offset=0x0213
+       mov      edi, dword ptr [rbp-0x5C]
+       mov      rax, gword ptr [rbp-0x30]
+       mov      rax, gword ptr [rax+0x10]
+       cmp      edi, dword ptr [rax+0x08]
+       jl       G_M000_IG08
+       vmovsd   xmm0, qword ptr [rbp-0x40]
+       vaddsd   xmm0, xmm0, qword ptr [rbp-0x58]
+       vmovsd   qword ptr [rbp-0x40], xmm0
+       mov      edi, dword ptr [rbp-0x44]
+       inc      edi
+       mov      dword ptr [rbp-0x6C], edi
+       mov      edi, dword ptr [rbp-0x44]
+       inc      edi
+       mov      dword ptr [rbp-0x44], edi
+       mov      edi, dword ptr [rbp-0x6C]
+       mov      rsi, gword ptr [rbp-0x30]
+       cmp      edi, dword ptr [rsi+0x58]
+       jne      G_M000_IG21
+       xor      edi, edi
+       mov      dword ptr [rbp-0x60], edi
+       jmp      SHORT G_M000_IG13
+ 
+G_M000_IG12:                ;; offset=0x025D
+       mov      rdi, 0x745198BAB888
+       call     CORINFO_HELP_COUNTPROFILE32
+       mov      rdi, gword ptr [rbp-0x30]
+       mov      rdi, gword ptr [rdi+0x10]
+       mov      esi, dword ptr [rbp-0x60]
+       cmp      esi, dword ptr [rdi+0x08]
+       jae      G_M000_IG32
+       mov      eax, esi
+       lea      rdi, bword ptr [rdi+8*rax+0x10]
+       mov      rdi, gword ptr [rdi]
+       mov      gword ptr [rbp-0x90], rdi
+       mov      rdi, gword ptr [rbp-0x90]
+       mov      rsi, 0x745198BAB890
+       call     CORINFO_HELP_CLASSPROFILE32
+       mov      rdi, gword ptr [rbp-0x90]
+       mov      gword ptr [rbp-0xC8], rdi
+       mov      rdi, gword ptr [rbp-0xC8]
+       mov      esi, dword ptr [rbp-0x48]
+       mov      r11, 0x745197C70028
+       call     [r11]ISide:BlockEnd(int):this
+       mov      edi, dword ptr [rbp-0x60]
+       inc      edi
+       mov      dword ptr [rbp-0x60], edi
+ 
+G_M000_IG13:                ;; offset=0x02D4
+       mov      edi, dword ptr [rbp-0xA8]
+       dec      edi
+       mov      dword ptr [rbp-0xA8], edi
+       cmp      dword ptr [rbp-0xA8], 0
+       jg       SHORT G_M000_IG15
+ 
+G_M000_IG14:                ;; offset=0x02EB
+       lea      rdi, [rbp-0xA8]
+       mov      esi, 155
+       call     CORINFO_HELP_PATCHPOINT
+ 
+G_M000_IG15:                ;; offset=0x02FC
+       mov      edi, dword ptr [rbp-0x60]
+       mov      rax, gword ptr [rbp-0x30]
+       mov      rax, gword ptr [rax+0x10]
+       cmp      edi, dword ptr [rax+0x08]
+       jl       G_M000_IG12
+       mov      edi, dword ptr [rbp-0x48]
+       inc      edi
+       mov      dword ptr [rbp-0x48], edi
+       xor      edi, edi
+       mov      dword ptr [rbp-0x44], edi
+       xor      edi, edi
+       mov      dword ptr [rbp-0x64], edi
+       jmp      SHORT G_M000_IG17
+ 
+G_M000_IG16:                ;; offset=0x0324
+       mov      rdi, 0x745198BAB998
+       call     CORINFO_HELP_COUNTPROFILE32
+       mov      rdi, gword ptr [rbp-0x30]
+       mov      rdi, gword ptr [rdi+0x10]
+       mov      esi, dword ptr [rbp-0x64]
+       cmp      esi, dword ptr [rdi+0x08]
+       jae      G_M000_IG32
+       mov      eax, esi
+       lea      rdi, bword ptr [rdi+8*rax+0x10]
+       mov      rdi, gword ptr [rdi]
+       mov      gword ptr [rbp-0x98], rdi
+       mov      rdi, gword ptr [rbp-0x98]
+       mov      rsi, 0x745198BAB9A0
+       call     CORINFO_HELP_CLASSPROFILE32
+       mov      rdi, gword ptr [rbp-0x98]
+       mov      gword ptr [rbp-0xD0], rdi
+       mov      rdi, gword ptr [rbp-0xD0]
+       mov      esi, dword ptr [rbp-0x48]
+       mov      r11, 0x745197C70030
+       call     [r11]ISide:BlockStart(int):this
+       mov      edi, dword ptr [rbp-0x64]
+       inc      edi
+       mov      dword ptr [rbp-0x64], edi
+ 
+G_M000_IG17:                ;; offset=0x039B
+       mov      edi, dword ptr [rbp-0xA8]
+       dec      edi
+       mov      dword ptr [rbp-0xA8], edi
+       cmp      dword ptr [rbp-0xA8], 0
+       jg       SHORT G_M000_IG19
+ 
+G_M000_IG18:                ;; offset=0x03B2
+       lea      rdi, [rbp-0xA8]
+       mov      esi, 199
+       call     CORINFO_HELP_PATCHPOINT
+ 
+G_M000_IG19:                ;; offset=0x03C3
+       mov      edi, dword ptr [rbp-0x64]
+       mov      rax, gword ptr [rbp-0x30]
+       mov      rax, gword ptr [rax+0x10]
+       cmp      edi, dword ptr [rax+0x08]
+       jl       G_M000_IG16
+ 
+G_M000_IG20:                ;; offset=0x03D7
+       mov      rdi, 0x745198BABAA8
+       call     CORINFO_HELP_COUNTPROFILE32
+ 
+G_M000_IG21:                ;; offset=0x03E6
+       mov      rdi, 0x745198BABAAC
+       call     CORINFO_HELP_COUNTPROFILE32
+       mov      edi, dword ptr [rbp-0x50]
+       inc      edi
+       mov      dword ptr [rbp-0x50], edi
+ 
+G_M000_IG22:                ;; offset=0x03FD
+       mov      edi, dword ptr [rbp-0xA8]
+       dec      edi
+       mov      dword ptr [rbp-0xA8], edi
+       cmp      dword ptr [rbp-0xA8], 0
+       jg       SHORT G_M000_IG24
+ 
+G_M000_IG23:                ;; offset=0x0414
+       lea      rdi, [rbp-0xA8]
+       mov      esi, 217
+       call     CORINFO_HELP_PATCHPOINT
+ 
+G_M000_IG24:                ;; offset=0x0425
+       mov      edi, dword ptr [rbp-0x50]
+       cmp      edi, dword ptr [rbp-0x34]
+       jl       G_M000_IG07
+       cmp      dword ptr [rbp-0x44], 0
+       jle      G_M000_IG30
+       xor      edi, edi
+       mov      dword ptr [rbp-0x68], edi
+       jmp      SHORT G_M000_IG26
+ 
+G_M000_IG25:                ;; offset=0x0442
+       mov      rdi, 0x745198BABAB0
+       call     CORINFO_HELP_COUNTPROFILE32
+       mov      rdi, gword ptr [rbp-0x30]
+       mov      rdi, gword ptr [rdi+0x10]
+       mov      esi, dword ptr [rbp-0x68]
+       cmp      esi, dword ptr [rdi+0x08]
+       jae      G_M000_IG32
+       mov      eax, esi
+       lea      rdi, bword ptr [rdi+8*rax+0x10]
+       mov      rdi, gword ptr [rdi]
+       mov      gword ptr [rbp-0xA0], rdi
+       mov      rdi, gword ptr [rbp-0xA0]
+       mov      rsi, 0x745198BABAB8
+       call     CORINFO_HELP_CLASSPROFILE32
+       mov      rdi, gword ptr [rbp-0xA0]
+       mov      gword ptr [rbp-0xD8], rdi
+       mov      rdi, gword ptr [rbp-0xD8]
+       mov      esi, dword ptr [rbp-0x48]
+       mov      r11, 0x745197C70038
+       call     [r11]ISide:BlockEnd(int):this
+       mov      edi, dword ptr [rbp-0x68]
+       inc      edi
+       mov      dword ptr [rbp-0x68], edi
+ 
+G_M000_IG26:                ;; offset=0x04B9
+       mov      edi, dword ptr [rbp-0xA8]
+       dec      edi
+       mov      dword ptr [rbp-0xA8], edi
+       cmp      dword ptr [rbp-0xA8], 0
+       jg       SHORT G_M000_IG28
+ 
+G_M000_IG27:                ;; offset=0x04D0
+       lea      rdi, [rbp-0xA8]
+       mov      esi, 255
+       call     CORINFO_HELP_PATCHPOINT
+ 
+G_M000_IG28:                ;; offset=0x04E1
+       mov      edi, dword ptr [rbp-0x68]
+       mov      rax, gword ptr [rbp-0x30]
+       mov      rax, gword ptr [rax+0x10]
+       cmp      edi, dword ptr [rax+0x08]
+       jl       G_M000_IG25
+ 
+G_M000_IG29:                ;; offset=0x04F5
+       mov      rdi, 0x745198BABBC0
+       call     CORINFO_HELP_COUNTPROFILE32
+ 
+G_M000_IG30:                ;; offset=0x0504
+       mov      rdi, 0x745198BABBC4
+       call     CORINFO_HELP_COUNTPROFILE32
+       vmovsd   xmm0, qword ptr [rbp-0x40]
+ 
+G_M000_IG31:                ;; offset=0x0518
+       add      rsp, 224
+       pop      rbp
+       ret      
+ 
+G_M000_IG32:                ;; offset=0x0521
+       call     CORINFO_HELP_RNGCHKFAIL
+       int3     
+ 
+; Total bytes of code 1319
+
+; Assembly listing for method ComposedTopo:RunShared(int):double:this (Tier1-OSR)
+; Emitting BLENDED_CODE for X64 with AVX - Unix
+; Tier1-OSR code
+; OSR variant for entry point 0x63
+; optimized code
+; optimized using Dynamic PGO
+; rbp based frame
+; fully interruptible
+; with Dynamic PGO: edge weights are invalid, and fgCalledCount is 99.88
+; 1 inlinees with PGO data; 5 single block inlinees; 1 inlinees without PGO data
+
+G_M000_IG01:                ;; offset=0x0000
+       mov      rax, qword ptr [rbp]
+       push     rax
+       sub      rsp, 64
+       mov      qword ptr [rsp+0x128], r15
+       mov      qword ptr [rsp+0x120], r14
+       mov      qword ptr [rsp+0x118], r13
+       mov      qword ptr [rsp+0x110], r12
+       mov      qword ptr [rsp+0x108], rbx
+       vzeroupper 
+       lea      rbp, [rsp+0x40]
+       mov      rbx, gword ptr [rbp+0xC0]
+       mov      r15d, dword ptr [rbp+0xBC]
+       mov      r12d, dword ptr [rbp+0xAC]
+       mov      r13d, dword ptr [rbp+0xA0]
+       vmovsd   xmm0, qword ptr [rbp+0x98]
+       mov      r14d, dword ptr [rbp+0x94]
+ 
+G_M000_IG02:                ;; offset=0x0064
+       jmp      SHORT G_M000_IG05
+ 
+G_M000_IG03:                ;; offset=0x0066
+       mov      rdi, gword ptr [rbx+0x08]
+       mov      rsi, 0x745198BAA058
+       cmp      qword ptr [rdi], rsi
+       jne      G_M000_IG24
+       vxorps   xmm0, xmm0, xmm0
+       vcvtsi2sd xmm0, xmm0, r13d
+       vmovsd   xmm2, qword ptr [reloc @RWD00]
+       vmulsd   xmm0, xmm0, xmm2
+       vaddsd   xmm0, xmm0, qword ptr [reloc @RWD08]
+       vsqrtsd  xmm0, xmm0, xmm0
+       vmulsd   xmm0, xmm0, xmm2
+       mov      esi, 1
+       cmp      dword ptr [rdi+0x08], 1
+       jg       SHORT G_M000_IG08
+ 
+G_M000_IG04:                ;; offset=0x00AD
+       xor      r14d, r14d
+       mov      dword ptr [rbp+0xA8], eax
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+ 
+G_M000_IG05:                ;; offset=0x00BE
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], r14d
+       jle      G_M000_IG11
+ 
+G_M000_IG06:                ;; offset=0x00CC
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      r14d, dword ptr [rdi+0x08]
+       jae      G_M000_IG29
+       mov      ecx, r14d
+       mov      rdi, gword ptr [rdi+8*rcx+0x10]
+       mov      rcx, 0x745198BA9798
+       cmp      qword ptr [rdi], rcx
+       jne      G_M000_IG25
+       mov      rdi, gword ptr [rdi+0x08]
+       mov      rdi, gword ptr [rdi+0x08]
+       inc      dword ptr [rdi+0x14]
+       mov      rcx, gword ptr [rdi+0x08]
+       mov      edx, dword ptr [rdi+0x10]
+       mov      esi, dword ptr [rcx+0x08]
+       cmp      esi, edx
+       jbe      SHORT G_M000_IG09
+ 
+G_M000_IG07:                ;; offset=0x010E
+       lea      esi, [rdx+0x01]
+       mov      dword ptr [rdi+0x10], esi
+       mov      edi, edx
+       vmovsd   qword ptr [rcx+8*rdi+0x10], xmm0
+       jmp      SHORT G_M000_IG10
+ 
+G_M000_IG08:                ;; offset=0x011E
+       vmulsd   xmm0, xmm0, xmm2
+       vaddsd   xmm0, xmm0, qword ptr [reloc @RWD08]
+       vsqrtsd  xmm0, xmm0, xmm0
+       vmulsd   xmm0, xmm0, xmm2
+       inc      esi
+       cmp      esi, dword ptr [rdi+0x08]
+       jl       SHORT G_M000_IG08
+       jmp      G_M000_IG04
+ 
+G_M000_IG09:                ;; offset=0x013E
+       vmovsd   qword ptr [rbp+0x98], xmm0
+       call     [System.Collections.Generic.List`1[double]:AddWithResize(double):this]
+       vmovsd   xmm0, qword ptr [rbp+0x98]
+ 
+G_M000_IG10:                ;; offset=0x0154
+       inc      r14d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], r14d
+       jg       G_M000_IG06
+ 
+G_M000_IG11:                ;; offset=0x0165
+       vaddsd   xmm1, xmm0, qword ptr [rbp+0xB0]
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       inc      r12d
+       cmp      r12d, dword ptr [rbx+0x58]
+       vmovsd   xmm1, qword ptr [rbp+0xB0]
+       je       SHORT G_M000_IG14
+ 
+G_M000_IG12:                ;; offset=0x0186
+       mov      eax, dword ptr [rbp+0xA8]
+ 
+G_M000_IG13:                ;; offset=0x018C
+       inc      r13d
+       cmp      r13d, r15d
+       jge      G_M000_IG26
+       jmp      G_M000_IG03
+ 
+G_M000_IG14:                ;; offset=0x019D
+       xor      r12d, r12d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], 0
+       jle      SHORT G_M000_IG17
+ 
+G_M000_IG15:                ;; offset=0x01AA
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      r12d, dword ptr [rdi+0x08]
+       jae      G_M000_IG29
+       mov      ecx, r12d
+       mov      r14, gword ptr [rdi+8*rcx+0x10]
+       mov      rdi, 0x745198BA9798
+       cmp      qword ptr [r14], rdi
+       jne      G_M000_IG27
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       vmovsd   xmm0, qword ptr [r14+0x10]
+       vmovsd   qword ptr [rbp-0x40], xmm0
+       mov      rdi, gword ptr [r14+0x08]
+       cmp      dword ptr [rdi], edi
+       call     [BuilderLayer+Builder:Build():double:this]
+       vaddsd   xmm0, xmm0, qword ptr [rbp-0x40]
+       vmovsd   qword ptr [r14+0x10], xmm0
+       xor      rdi, rdi
+       mov      gword ptr [r14+0x08], rdi
+ 
+G_M000_IG16:                ;; offset=0x0203
+       inc      r12d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], r12d
+       vmovsd   xmm1, qword ptr [rbp+0xB0]
+       jg       SHORT G_M000_IG15
+ 
+G_M000_IG17:                ;; offset=0x0218
+       mov      eax, dword ptr [rbp+0xA8]
+       inc      eax
+       mov      dword ptr [rbp+0xA8], eax
+       xor      r12d, r12d
+       xor      r14d, r14d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], 0
+       mov      eax, dword ptr [rbp+0xA8]
+       jle      G_M000_IG13
+ 
+G_M000_IG18:                ;; offset=0x0240
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      r14d, dword ptr [rdi+0x08]
+       jae      G_M000_IG29
+       mov      ecx, r14d
+       mov      rcx, gword ptr [rdi+8*rcx+0x10]
+       mov      gword ptr [rbp-0x30], rcx
+       mov      rdi, 0x745198BA9798
+       cmp      qword ptr [rcx], rdi
+       jne      G_M000_IG28
+       mov      dword ptr [rbp+0xA8], eax
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       mov      rdi, 0x745198BABC50
+       call     CORINFO_HELP_NEWSFAST
+       mov      gword ptr [rbp-0x38], rax
+       mov      rdi, rax
+       call     [BuilderLayer+Builder:.ctor():this]
+       mov      rax, gword ptr [rbp-0x30]
+       lea      rdi, bword ptr [rax+0x08]
+       mov      rsi, gword ptr [rbp-0x38]
+       call     CORINFO_HELP_ASSIGN_REF
+ 
+G_M000_IG19:                ;; offset=0x02A8
+       inc      r14d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], r14d
+       mov      eax, dword ptr [rbp+0xA8]
+       vmovsd   xmm1, qword ptr [rbp+0xB0]
+       jg       G_M000_IG18
+       jmp      G_M000_IG13
+ 
+G_M000_IG20:                ;; offset=0x02CC
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      r15d, dword ptr [rdi+0x08]
+       jae      G_M000_IG29
+       mov      esi, r15d
+       mov      rdi, gword ptr [rdi+8*rsi+0x10]
+       mov      dword ptr [rbp+0xA8], eax
+       mov      esi, eax
+       mov      r11, 0x745197C70050
+       call     [r11]ISide:BlockEnd(int):this
+       inc      r15d
+       mov      eax, dword ptr [rbp+0xA8]
+       vmovsd   xmm1, qword ptr [rbp+0xB0]
+ 
+G_M000_IG21:                ;; offset=0x0310
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], r15d
+       jg       SHORT G_M000_IG20
+ 
+G_M000_IG22:                ;; offset=0x031A
+       vmovaps  xmm0, xmm1
+ 
+G_M000_IG23:                ;; offset=0x031E
+       add      rsp, 264
+       pop      rbx
+       pop      r12
+       pop      r13
+       pop      r14
+       pop      r15
+       pop      rbp
+       ret      
+ 
+G_M000_IG24:                ;; offset=0x0330
+       mov      dword ptr [rbp+0xA8], eax
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       mov      esi, r13d
+       mov      r11, 0x745197C70048
+       call     [r11]ICompute:Compute(int):double:this
+       mov      eax, dword ptr [rbp+0xA8]
+       vmovsd   xmm1, qword ptr [rbp+0xB0]
+       jmp      G_M000_IG04
+ 
+G_M000_IG25:                ;; offset=0x0361
+       vmovsd   qword ptr [rbp+0x98], xmm0
+       mov      esi, r13d
+       mov      r11, 0x745197C70058
+       call     [r11]ISide:Step(int,double):this
+       vmovsd   xmm0, qword ptr [rbp+0x98]
+       jmp      G_M000_IG10
+ 
+G_M000_IG26:                ;; offset=0x0386
+       test     r12d, r12d
+       jle      SHORT G_M000_IG22
+       xor      r15d, r15d
+       jmp      SHORT G_M000_IG21
+ 
+G_M000_IG27:                ;; offset=0x0390
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       mov      eax, dword ptr [rbp+0xA8]
+       mov      rdi, r14
+       mov      dword ptr [rbp+0xA8], eax
+       mov      esi, eax
+       mov      r11, 0x745197C70060
+       call     [r11]ISide:BlockEnd(int):this
+       jmp      G_M000_IG16
+ 
+G_M000_IG28:                ;; offset=0x03BB
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       mov      rcx, gword ptr [rbp-0x30]
+       mov      rdi, rcx
+       mov      dword ptr [rbp+0xA8], eax
+       mov      esi, eax
+       mov      r11, 0x745197C70068
+       call     [r11]ISide:BlockStart(int):this
+       jmp      G_M000_IG19
+ 
+G_M000_IG29:                ;; offset=0x03E4
+       call     CORINFO_HELP_RNGCHKFAIL
+       int3     
+ 
+RWD00  	dq	3FF000001AD7F29Bh	;    1.0000001
+RWD08  	dq	3FF0000000000000h	;            1
+
+; Total bytes of code 1002
+
+; Assembly listing for method ComposedTopo:RunShared(int):double:this (Instrumented Tier0)
+; Emitting BLENDED_CODE for X64 with AVX - Unix
+; Instrumented Tier0 code
+; rbp based frame
+; partially interruptible
+
+G_M000_IG01:                ;; offset=0x0000
+       push     rbp
+       sub      rsp, 224
+       vzeroupper 
+       lea      rbp, [rsp+0xE0]
+       xor      eax, eax
+       mov      qword ptr [rbp-0xD8], rax
+       vxorps   xmm8, xmm8, xmm8
+       mov      rax, -144
+       vmovdqa  xmmword ptr [rbp+rax-0x40], xmm8
+       vmovdqa  xmmword ptr [rbp+rax-0x30], xmm8
+       vmovdqa  xmmword ptr [rbp+rax-0x20], xmm8
+       add      rax, 48
+       jne      SHORT  -5 instr
+       mov      qword ptr [rbp-0x40], rax
+       mov      gword ptr [rbp-0x30], rdi
+       mov      dword ptr [rbp-0x34], esi
+ 
+G_M000_IG02:                ;; offset=0x004E
+       xor      edi, edi
+       mov      qword ptr [rbp-0x40], rdi
+       xor      edi, edi
+       mov      dword ptr [rbp-0x44], edi
+       xor      edi, edi
+       mov      dword ptr [rbp-0x48], edi
+       xor      edi, edi
+       mov      dword ptr [rbp-0x4C], edi
+       mov      dword ptr [rbp-0xA8], 0x3E8
+       jmp      SHORT G_M000_IG04
+ 
+G_M000_IG03:                ;; offset=0x006F
+       mov      rdi, 0x745198BAB560
+       call     CORINFO_HELP_COUNTPROFILE32
+       mov      rdi, gword ptr [rbp-0x30]
+       mov      rdi, gword ptr [rdi+0x10]
+       mov      esi, dword ptr [rbp-0x4C]
+       cmp      esi, dword ptr [rdi+0x08]
+       jae      G_M000_IG32
+       mov      eax, esi
+       lea      rdi, bword ptr [rdi+8*rax+0x10]
+       mov      rdi, gword ptr [rdi]
+       mov      gword ptr [rbp-0x78], rdi
+       mov      rdi, gword ptr [rbp-0x78]
+       mov      rsi, 0x745198BAB568
+       call     CORINFO_HELP_CLASSPROFILE32
+       mov      rdi, gword ptr [rbp-0x78]
+       mov      gword ptr [rbp-0xB0], rdi
+       mov      rdi, gword ptr [rbp-0xB0]
+       mov      r11, 0x745197C70070
+       xor      esi, esi
+       call     [r11]ISide:BlockStart(int):this
+       mov      edi, dword ptr [rbp-0x4C]
+       inc      edi
+       mov      dword ptr [rbp-0x4C], edi
+ 
+G_M000_IG04:                ;; offset=0x00DC
+       mov      edi, dword ptr [rbp-0xA8]
+       dec      edi
+       mov      dword ptr [rbp-0xA8], edi
+       cmp      dword ptr [rbp-0xA8], 0
+       jg       SHORT G_M000_IG06
+ 
+G_M000_IG05:                ;; offset=0x00F3
+       lea      rdi, [rbp-0xA8]
+       mov      esi, 36
+       call     CORINFO_HELP_PATCHPOINT
+ 
+G_M000_IG06:                ;; offset=0x0104
+       mov      edi, dword ptr [rbp-0x4C]
+       mov      rax, gword ptr [rbp-0x30]
+       mov      rax, gword ptr [rax+0x10]
+       cmp      edi, dword ptr [rax+0x08]
+       jl       G_M000_IG03
+       xor      edi, edi
+       mov      dword ptr [rbp-0x50], edi
+       jmp      G_M000_IG22
+ 
+G_M000_IG07:                ;; offset=0x0122
+       mov      rdi, gword ptr [rbp-0x30]
+       mov      rdi, gword ptr [rdi+0x08]
+       mov      gword ptr [rbp-0x80], rdi
+       mov      rdi, gword ptr [rbp-0x80]
+       mov      rsi, 0x745198BAB670
+       call     CORINFO_HELP_CLASSPROFILE32
+       mov      rdi, gword ptr [rbp-0x80]
+       mov      gword ptr [rbp-0xB8], rdi
+       mov      rdi, gword ptr [rbp-0xB8]
+       mov      esi, dword ptr [rbp-0x50]
+       mov      r11, 0x745197C70078
+       call     [r11]ICompute:Compute(int):double:this
+       vmovsd   qword ptr [rbp-0x58], xmm0
+       xor      edi, edi
+       mov      dword ptr [rbp-0x5C], edi
+       jmp      SHORT G_M000_IG09
+ 
+G_M000_IG08:                ;; offset=0x016F
+       mov      rdi, 0x745198BAB778
+       call     CORINFO_HELP_COUNTPROFILE32
+       mov      rdi, gword ptr [rbp-0x30]
+       mov      rdi, gword ptr [rdi+0x10]
+       mov      esi, dword ptr [rbp-0x5C]
+       cmp      esi, dword ptr [rdi+0x08]
+       jae      G_M000_IG32
+       mov      eax, esi
+       lea      rdi, bword ptr [rdi+8*rax+0x10]
+       mov      rdi, gword ptr [rdi]
+       mov      gword ptr [rbp-0x88], rdi
+       mov      rdi, gword ptr [rbp-0x88]
+       mov      rsi, 0x745198BAB780
+       call     CORINFO_HELP_CLASSPROFILE32
+       mov      rdi, gword ptr [rbp-0x88]
+       mov      gword ptr [rbp-0xC0], rdi
+       mov      rdi, gword ptr [rbp-0xC0]
+       vmovsd   xmm0, qword ptr [rbp-0x58]
+       mov      esi, dword ptr [rbp-0x50]
+       mov      r11, 0x745197C70080
+       call     [r11]ISide:Step(int,double):this
+       mov      edi, dword ptr [rbp-0x5C]
+       inc      edi
+       mov      dword ptr [rbp-0x5C], edi
+ 
+G_M000_IG09:                ;; offset=0x01EB
+       mov      edi, dword ptr [rbp-0xA8]
+       dec      edi
+       mov      dword ptr [rbp-0xA8], edi
+       cmp      dword ptr [rbp-0xA8], 0
+       jg       SHORT G_M000_IG11
+ 
+G_M000_IG10:                ;; offset=0x0202
+       lea      rdi, [rbp-0xA8]
+       mov      esi, 99
+       call     CORINFO_HELP_PATCHPOINT
+ 
+G_M000_IG11:                ;; offset=0x0213
+       mov      edi, dword ptr [rbp-0x5C]
+       mov      rax, gword ptr [rbp-0x30]
+       mov      rax, gword ptr [rax+0x10]
+       cmp      edi, dword ptr [rax+0x08]
+       jl       G_M000_IG08
+       vmovsd   xmm0, qword ptr [rbp-0x40]
+       vaddsd   xmm0, xmm0, qword ptr [rbp-0x58]
+       vmovsd   qword ptr [rbp-0x40], xmm0
+       mov      edi, dword ptr [rbp-0x44]
+       inc      edi
+       mov      dword ptr [rbp-0x6C], edi
+       mov      edi, dword ptr [rbp-0x44]
+       inc      edi
+       mov      dword ptr [rbp-0x44], edi
+       mov      edi, dword ptr [rbp-0x6C]
+       mov      rsi, gword ptr [rbp-0x30]
+       cmp      edi, dword ptr [rsi+0x58]
+       jne      G_M000_IG21
+       xor      edi, edi
+       mov      dword ptr [rbp-0x60], edi
+       jmp      SHORT G_M000_IG13
+ 
+G_M000_IG12:                ;; offset=0x025D
+       mov      rdi, 0x745198BAB888
+       call     CORINFO_HELP_COUNTPROFILE32
+       mov      rdi, gword ptr [rbp-0x30]
+       mov      rdi, gword ptr [rdi+0x10]
+       mov      esi, dword ptr [rbp-0x60]
+       cmp      esi, dword ptr [rdi+0x08]
+       jae      G_M000_IG32
+       mov      eax, esi
+       lea      rdi, bword ptr [rdi+8*rax+0x10]
+       mov      rdi, gword ptr [rdi]
+       mov      gword ptr [rbp-0x90], rdi
+       mov      rdi, gword ptr [rbp-0x90]
+       mov      rsi, 0x745198BAB890
+       call     CORINFO_HELP_CLASSPROFILE32
+       mov      rdi, gword ptr [rbp-0x90]
+       mov      gword ptr [rbp-0xC8], rdi
+       mov      rdi, gword ptr [rbp-0xC8]
+       mov      esi, dword ptr [rbp-0x48]
+       mov      r11, 0x745197C70088
+       call     [r11]ISide:BlockEnd(int):this
+       mov      edi, dword ptr [rbp-0x60]
+       inc      edi
+       mov      dword ptr [rbp-0x60], edi
+ 
+G_M000_IG13:                ;; offset=0x02D4
+       mov      edi, dword ptr [rbp-0xA8]
+       dec      edi
+       mov      dword ptr [rbp-0xA8], edi
+       cmp      dword ptr [rbp-0xA8], 0
+       jg       SHORT G_M000_IG15
+ 
+G_M000_IG14:                ;; offset=0x02EB
+       lea      rdi, [rbp-0xA8]
+       mov      esi, 155
+       call     CORINFO_HELP_PATCHPOINT
+ 
+G_M000_IG15:                ;; offset=0x02FC
+       mov      edi, dword ptr [rbp-0x60]
+       mov      rax, gword ptr [rbp-0x30]
+       mov      rax, gword ptr [rax+0x10]
+       cmp      edi, dword ptr [rax+0x08]
+       jl       G_M000_IG12
+       mov      edi, dword ptr [rbp-0x48]
+       inc      edi
+       mov      dword ptr [rbp-0x48], edi
+       xor      edi, edi
+       mov      dword ptr [rbp-0x44], edi
+       xor      edi, edi
+       mov      dword ptr [rbp-0x64], edi
+       jmp      SHORT G_M000_IG17
+ 
+G_M000_IG16:                ;; offset=0x0324
+       mov      rdi, 0x745198BAB998
+       call     CORINFO_HELP_COUNTPROFILE32
+       mov      rdi, gword ptr [rbp-0x30]
+       mov      rdi, gword ptr [rdi+0x10]
+       mov      esi, dword ptr [rbp-0x64]
+       cmp      esi, dword ptr [rdi+0x08]
+       jae      G_M000_IG32
+       mov      eax, esi
+       lea      rdi, bword ptr [rdi+8*rax+0x10]
+       mov      rdi, gword ptr [rdi]
+       mov      gword ptr [rbp-0x98], rdi
+       mov      rdi, gword ptr [rbp-0x98]
+       mov      rsi, 0x745198BAB9A0
+       call     CORINFO_HELP_CLASSPROFILE32
+       mov      rdi, gword ptr [rbp-0x98]
+       mov      gword ptr [rbp-0xD0], rdi
+       mov      rdi, gword ptr [rbp-0xD0]
+       mov      esi, dword ptr [rbp-0x48]
+       mov      r11, 0x745197C70090
+       call     [r11]ISide:BlockStart(int):this
+       mov      edi, dword ptr [rbp-0x64]
+       inc      edi
+       mov      dword ptr [rbp-0x64], edi
+ 
+G_M000_IG17:                ;; offset=0x039B
+       mov      edi, dword ptr [rbp-0xA8]
+       dec      edi
+       mov      dword ptr [rbp-0xA8], edi
+       cmp      dword ptr [rbp-0xA8], 0
+       jg       SHORT G_M000_IG19
+ 
+G_M000_IG18:                ;; offset=0x03B2
+       lea      rdi, [rbp-0xA8]
+       mov      esi, 199
+       call     CORINFO_HELP_PATCHPOINT
+ 
+G_M000_IG19:                ;; offset=0x03C3
+       mov      edi, dword ptr [rbp-0x64]
+       mov      rax, gword ptr [rbp-0x30]
+       mov      rax, gword ptr [rax+0x10]
+       cmp      edi, dword ptr [rax+0x08]
+       jl       G_M000_IG16
+ 
+G_M000_IG20:                ;; offset=0x03D7
+       mov      rdi, 0x745198BABAA8
+       call     CORINFO_HELP_COUNTPROFILE32
+ 
+G_M000_IG21:                ;; offset=0x03E6
+       mov      rdi, 0x745198BABAAC
+       call     CORINFO_HELP_COUNTPROFILE32
+       mov      edi, dword ptr [rbp-0x50]
+       inc      edi
+       mov      dword ptr [rbp-0x50], edi
+ 
+G_M000_IG22:                ;; offset=0x03FD
+       mov      edi, dword ptr [rbp-0xA8]
+       dec      edi
+       mov      dword ptr [rbp-0xA8], edi
+       cmp      dword ptr [rbp-0xA8], 0
+       jg       SHORT G_M000_IG24
+ 
+G_M000_IG23:                ;; offset=0x0414
+       lea      rdi, [rbp-0xA8]
+       mov      esi, 217
+       call     CORINFO_HELP_PATCHPOINT
+ 
+G_M000_IG24:                ;; offset=0x0425
+       mov      edi, dword ptr [rbp-0x50]
+       cmp      edi, dword ptr [rbp-0x34]
+       jl       G_M000_IG07
+       cmp      dword ptr [rbp-0x44], 0
+       jle      G_M000_IG30
+       xor      edi, edi
+       mov      dword ptr [rbp-0x68], edi
+       jmp      SHORT G_M000_IG26
+ 
+G_M000_IG25:                ;; offset=0x0442
+       mov      rdi, 0x745198BABAB0
+       call     CORINFO_HELP_COUNTPROFILE32
+       mov      rdi, gword ptr [rbp-0x30]
+       mov      rdi, gword ptr [rdi+0x10]
+       mov      esi, dword ptr [rbp-0x68]
+       cmp      esi, dword ptr [rdi+0x08]
+       jae      G_M000_IG32
+       mov      eax, esi
+       lea      rdi, bword ptr [rdi+8*rax+0x10]
+       mov      rdi, gword ptr [rdi]
+       mov      gword ptr [rbp-0xA0], rdi
+       mov      rdi, gword ptr [rbp-0xA0]
+       mov      rsi, 0x745198BABAB8
+       call     CORINFO_HELP_CLASSPROFILE32
+       mov      rdi, gword ptr [rbp-0xA0]
+       mov      gword ptr [rbp-0xD8], rdi
+       mov      rdi, gword ptr [rbp-0xD8]
+       mov      esi, dword ptr [rbp-0x48]
+       mov      r11, 0x745197C70098
+       call     [r11]ISide:BlockEnd(int):this
+       mov      edi, dword ptr [rbp-0x68]
+       inc      edi
+       mov      dword ptr [rbp-0x68], edi
+ 
+G_M000_IG26:                ;; offset=0x04B9
+       mov      edi, dword ptr [rbp-0xA8]
+       dec      edi
+       mov      dword ptr [rbp-0xA8], edi
+       cmp      dword ptr [rbp-0xA8], 0
+       jg       SHORT G_M000_IG28
+ 
+G_M000_IG27:                ;; offset=0x04D0
+       lea      rdi, [rbp-0xA8]
+       mov      esi, 255
+       call     CORINFO_HELP_PATCHPOINT
+ 
+G_M000_IG28:                ;; offset=0x04E1
+       mov      edi, dword ptr [rbp-0x68]
+       mov      rax, gword ptr [rbp-0x30]
+       mov      rax, gword ptr [rax+0x10]
+       cmp      edi, dword ptr [rax+0x08]
+       jl       G_M000_IG25
+ 
+G_M000_IG29:                ;; offset=0x04F5
+       mov      rdi, 0x745198BABBC0
+       call     CORINFO_HELP_COUNTPROFILE32
+ 
+G_M000_IG30:                ;; offset=0x0504
+       mov      rdi, 0x745198BABBC4
+       call     CORINFO_HELP_COUNTPROFILE32
+       vmovsd   xmm0, qword ptr [rbp-0x40]
+ 
+G_M000_IG31:                ;; offset=0x0518
+       add      rsp, 224
+       pop      rbp
+       ret      
+ 
+G_M000_IG32:                ;; offset=0x0521
+       call     CORINFO_HELP_RNGCHKFAIL
+       int3     
+ 
+; Total bytes of code 1319
+
+; Assembly listing for method ComposedTopo:RunShared(int):double:this (Tier1-OSR)
+; Emitting BLENDED_CODE for X64 with AVX - Unix
+; Tier1-OSR code
+; OSR variant for entry point 0x63
+; optimized code
+; optimized using Dynamic PGO
+; rbp based frame
+; fully interruptible
+; with Dynamic PGO: edge weights are valid, and fgCalledCount is 2396.01
+; 2 inlinees with PGO data; 9 single block inlinees; 0 inlinees without PGO data
+
+G_M000_IG01:                ;; offset=0x0000
+       mov      rax, qword ptr [rbp]
+       push     rax
+       sub      rsp, 64
+       mov      qword ptr [rsp+0x128], r15
+       mov      qword ptr [rsp+0x120], r14
+       mov      qword ptr [rsp+0x118], r13
+       mov      qword ptr [rsp+0x110], r12
+       mov      qword ptr [rsp+0x108], rbx
+       vzeroupper 
+       lea      rbp, [rsp+0x40]
+       mov      rbx, gword ptr [rbp+0xC0]
+       mov      r15d, dword ptr [rbp+0xBC]
+       vmovsd   xmm1, qword ptr [rbp+0xB0]
+       mov      r12d, dword ptr [rbp+0xAC]
+       mov      r13d, dword ptr [rbp+0xA0]
+       vmovsd   xmm0, qword ptr [rbp+0x98]
+       mov      r14d, dword ptr [rbp+0x94]
+ 
+G_M000_IG02:                ;; offset=0x006C
+       jmp      SHORT G_M000_IG05
+ 
+G_M000_IG03:                ;; offset=0x006E
+       mov      rdi, gword ptr [rbx+0x08]
+       mov      rcx, 0x745198BAA058
+       cmp      qword ptr [rdi], rcx
+       jne      G_M000_IG30
+       vxorps   xmm0, xmm0, xmm0
+       vcvtsi2sd xmm0, xmm0, r13d
+       vmovsd   xmm2, qword ptr [reloc @RWD00]
+       vmulsd   xmm0, xmm0, xmm2
+       vaddsd   xmm0, xmm0, qword ptr [reloc @RWD08]
+       vsqrtsd  xmm0, xmm0, xmm0
+       vmulsd   xmm0, xmm0, xmm2
+       mov      ecx, 1
+       cmp      dword ptr [rdi+0x08], 1
+       jg       SHORT G_M000_IG07
+ 
+G_M000_IG04:                ;; offset=0x00B5
+       xor      r14d, r14d
+ 
+G_M000_IG05:                ;; offset=0x00B8
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], r14d
+       jle      SHORT G_M000_IG13
+ 
+G_M000_IG06:                ;; offset=0x00C2
+       jmp      SHORT G_M000_IG15
+ 
+G_M000_IG07:                ;; offset=0x00C4
+       vmulsd   xmm0, xmm0, xmm2
+       vaddsd   xmm0, xmm0, qword ptr [reloc @RWD08]
+       vsqrtsd  xmm0, xmm0, xmm0
+       vmulsd   xmm0, xmm0, xmm2
+       inc      ecx
+       cmp      ecx, dword ptr [rdi+0x08]
+       jl       SHORT G_M000_IG07
+ 
+G_M000_IG08:                ;; offset=0x00DF
+       jmp      SHORT G_M000_IG04
+ 
+G_M000_IG09:                ;; offset=0x00E1
+       inc      r14d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], r14d
+       vmovsd   xmm1, qword ptr [rbp+0xB0]
+       jg       SHORT G_M000_IG11
+ 
+G_M000_IG10:                ;; offset=0x00F6
+       inc      r13d
+       cmp      r13d, r15d
+       jge      G_M000_IG25
+       jmp      G_M000_IG03
+ 
+G_M000_IG11:                ;; offset=0x0107
+       mov      eax, dword ptr [rbp+0xA8]
+       jmp      G_M000_IG23
+ 
+G_M000_IG12:                ;; offset=0x0112
+       inc      r14d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], r14d
+       jg       SHORT G_M000_IG15
+ 
+G_M000_IG13:                ;; offset=0x011F
+       vaddsd   xmm1, xmm1, xmm0
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       inc      r12d
+       cmp      r12d, dword ptr [rbx+0x58]
+       vmovsd   xmm1, qword ptr [rbp+0xB0]
+       jne      SHORT G_M000_IG10
+ 
+G_M000_IG14:                ;; offset=0x013C
+       jmp      SHORT G_M000_IG18
+ 
+G_M000_IG15:                ;; offset=0x013E
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      r14d, dword ptr [rdi+0x08]
+       jae      G_M000_IG33
+       mov      ecx, r14d
+       mov      rdi, gword ptr [rdi+8*rcx+0x10]
+       mov      rcx, 0x745198BA9798
+       cmp      qword ptr [rdi], rcx
+       jne      G_M000_IG31
+       mov      rdi, gword ptr [rdi+0x08]
+       mov      rdi, gword ptr [rdi+0x08]
+       inc      dword ptr [rdi+0x14]
+       mov      rcx, gword ptr [rdi+0x08]
+       mov      edx, dword ptr [rdi+0x10]
+       cmp      dword ptr [rcx+0x08], edx
+       jbe      SHORT G_M000_IG17
+ 
+G_M000_IG16:                ;; offset=0x017E
+       lea      esi, [rdx+0x01]
+       mov      dword ptr [rdi+0x10], esi
+       mov      edi, edx
+       vmovsd   qword ptr [rcx+8*rdi+0x10], xmm0
+       jmp      SHORT G_M000_IG12
+ 
+G_M000_IG17:                ;; offset=0x018E
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       vmovsd   qword ptr [rbp+0x98], xmm0
+       call     [System.Collections.Generic.List`1[double]:AddWithResize(double):this]
+       vmovsd   xmm0, qword ptr [rbp+0x98]
+       vmovsd   xmm1, qword ptr [rbp+0xB0]
+       jmp      G_M000_IG12
+ 
+G_M000_IG18:                ;; offset=0x01B9
+       xor      r12d, r12d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], 0
+       jle      SHORT G_M000_IG21
+ 
+G_M000_IG19:                ;; offset=0x01C6
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      r12d, dword ptr [rdi+0x08]
+       jae      G_M000_IG33
+       mov      ecx, r12d
+       mov      r14, gword ptr [rdi+8*rcx+0x10]
+       mov      rdi, 0x745198BA9798
+       cmp      qword ptr [r14], rdi
+       jne      G_M000_IG32
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       vmovsd   xmm0, qword ptr [r14+0x10]
+       vmovsd   qword ptr [rbp-0x40], xmm0
+       mov      rdi, gword ptr [r14+0x08]
+       cmp      dword ptr [rdi], edi
+       call     [BuilderLayer+Builder:Build():double:this]
+       vaddsd   xmm0, xmm0, qword ptr [rbp-0x40]
+       vmovsd   qword ptr [r14+0x10], xmm0
+       xor      rdi, rdi
+       mov      gword ptr [r14+0x08], rdi
+ 
+G_M000_IG20:                ;; offset=0x021F
+       inc      r12d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], r12d
+       vmovsd   xmm1, qword ptr [rbp+0xB0]
+       jg       SHORT G_M000_IG19
+ 
+G_M000_IG21:                ;; offset=0x0234
+       mov      eax, dword ptr [rbp+0xA8]
+       inc      eax
+       mov      dword ptr [rbp+0xA8], eax
+       xor      r12d, r12d
+       xor      r14d, r14d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], 0
+       jle      G_M000_IG10
+ 
+G_M000_IG22:                ;; offset=0x0256
+       mov      eax, dword ptr [rbp+0xA8]
+ 
+G_M000_IG23:                ;; offset=0x025C
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      r14d, dword ptr [rdi+0x08]
+       jae      G_M000_IG33
+       mov      ecx, r14d
+       mov      rcx, gword ptr [rdi+8*rcx+0x10]
+       mov      gword ptr [rbp-0x30], rcx
+       mov      rdi, 0x745198BA9798
+       cmp      qword ptr [rcx], rdi
+       jne      SHORT G_M000_IG24
+       mov      dword ptr [rbp+0xA8], eax
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       mov      rdi, 0x745198BABC50
+       call     CORINFO_HELP_NEWSFAST
+       mov      gword ptr [rbp-0x38], rax
+       mov      rdi, rax
+       call     [BuilderLayer+Builder:.ctor():this]
+       mov      rax, gword ptr [rbp-0x30]
+       lea      rdi, bword ptr [rax+0x08]
+       mov      rsi, gword ptr [rbp-0x38]
+       call     CORINFO_HELP_ASSIGN_REF
+       jmp      G_M000_IG09
+ 
+G_M000_IG24:                ;; offset=0x02C5
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       mov      rcx, gword ptr [rbp-0x30]
+       mov      rdi, rcx
+       mov      dword ptr [rbp+0xA8], eax
+       mov      esi, eax
+       mov      r11, 0x745197C700C8
+       call     [r11]ISide:BlockStart(int):this
+       jmp      G_M000_IG09
+ 
+G_M000_IG25:                ;; offset=0x02EE
+       mov      eax, dword ptr [rbp+0xA8]
+       test     r12d, r12d
+       jle      SHORT G_M000_IG28
+       xor      r15d, r15d
+       jmp      SHORT G_M000_IG27
+ 
+G_M000_IG26:                ;; offset=0x02FE
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      r15d, dword ptr [rdi+0x08]
+       jae      G_M000_IG33
+       mov      esi, r15d
+       mov      rdi, gword ptr [rdi+8*rsi+0x10]
+       mov      dword ptr [rbp+0xA8], eax
+       mov      esi, eax
+       mov      r11, 0x745197C700B0
+       call     [r11]ISide:BlockEnd(int):this
+       inc      r15d
+       mov      eax, dword ptr [rbp+0xA8]
+       vmovsd   xmm1, qword ptr [rbp+0xB0]
+ 
+G_M000_IG27:                ;; offset=0x0342
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], r15d
+       jg       SHORT G_M000_IG26
+ 
+G_M000_IG28:                ;; offset=0x034C
+       vmovaps  xmm0, xmm1
+ 
+G_M000_IG29:                ;; offset=0x0350
+       add      rsp, 264
+       pop      rbx
+       pop      r12
+       pop      r13
+       pop      r14
+       pop      r15
+       pop      rbp
+       ret      
+ 
+G_M000_IG30:                ;; offset=0x0362
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       mov      esi, r13d
+       mov      r11, 0x745197C700A8
+       call     [r11]ICompute:Compute(int):double:this
+       vmovsd   xmm1, qword ptr [rbp+0xB0]
+       jmp      G_M000_IG04
+ 
+G_M000_IG31:                ;; offset=0x0387
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       vmovsd   qword ptr [rbp+0x98], xmm0
+       mov      esi, r13d
+       mov      r11, 0x745197C700B8
+       call     [r11]ISide:Step(int,double):this
+       vmovsd   xmm0, qword ptr [rbp+0x98]
+       vmovsd   xmm1, qword ptr [rbp+0xB0]
+       jmp      G_M000_IG12
+ 
+G_M000_IG32:                ;; offset=0x03BC
+       vmovsd   qword ptr [rbp+0xB0], xmm1
+       mov      eax, dword ptr [rbp+0xA8]
+       mov      rdi, r14
+       mov      dword ptr [rbp+0xA8], eax
+       mov      esi, eax
+       mov      r11, 0x745197C700C0
+       call     [r11]ISide:BlockEnd(int):this
+       jmp      G_M000_IG20
+ 
+G_M000_IG33:                ;; offset=0x03E7
+       call     CORINFO_HELP_RNGCHKFAIL
+       int3     
+ 
+RWD00  	dq	3FF000001AD7F29Bh	;    1.0000001
+RWD08  	dq	3FF0000000000000h	;            1
+
+; Total bytes of code 1005
+
+; Assembly listing for method ComposedTopo:RunShared(int):double:this (Tier1)
+; Emitting BLENDED_CODE for X64 with AVX - Unix
+; Tier1 code
+; optimized code
+; optimized using Blended PGO
+; rbp based frame
+; fully interruptible
+; with Blended PGO: edge weights are valid, and fgCalledCount is 100
+; 4 inlinees with PGO data; 14 single block inlinees; 0 inlinees without PGO data
+
+G_M000_IG01:                ;; offset=0x0000
+       push     rbp
+       push     r15
+       push     r14
+       push     r13
+       push     r12
+       push     rbx
+       sub      rsp, 56
+       vzeroupper 
+       lea      rbp, [rsp+0x60]
+       mov      rbx, rdi
+       mov      r15d, esi
+ 
+G_M000_IG02:                ;; offset=0x001C
+       vxorps   xmm0, xmm0, xmm0
+       vmovsd   qword ptr [rbp-0x30], xmm0
+       xor      r14d, r14d
+       xor      r13d, r13d
+       xor      r12d, r12d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], 0
+       jle      G_M000_IG05
+ 
+G_M000_IG03:                ;; offset=0x003C
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      r12d, dword ptr [rdi+0x08]
+       jae      G_M000_IG39
+       mov      eax, r12d
+       mov      rax, gword ptr [rdi+8*rax+0x10]
+       mov      gword ptr [rbp-0x48], rax
+       mov      rdi, 0x745198BA9798
+       cmp      qword ptr [rax], rdi
+       jne      G_M000_IG34
+       mov      rdi, 0x745198BABC50
+       call     CORINFO_HELP_NEWSFAST
+       mov      gword ptr [rbp-0x58], rax
+       mov      rdi, 0x745198BAC2D8
+       call     CORINFO_HELP_NEWSFAST
+       mov      rdi, 0x745196802030
+       mov      gword ptr [rax+0x08], rdi
+       mov      rcx, gword ptr [rbp-0x58]
+       lea      rdi, bword ptr [rcx+0x08]
+       mov      rsi, rax
+       call     CORINFO_HELP_ASSIGN_REF
+       mov      rax, gword ptr [rbp-0x48]
+       lea      rdi, bword ptr [rax+0x08]
+       mov      rsi, gword ptr [rbp-0x58]
+       call     CORINFO_HELP_ASSIGN_REF
+ 
+G_M000_IG04:                ;; offset=0x00BA
+       inc      r12d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], r12d
+       jg       G_M000_IG03
+ 
+G_M000_IG05:                ;; offset=0x00CB
+       xor      r12d, r12d
+       test     r15d, r15d
+       jle      G_M000_IG28
+ 
+G_M000_IG06:                ;; offset=0x00D7
+       mov      rdi, gword ptr [rbx+0x08]
+       mov      rax, 0x745198BAA058
+       cmp      qword ptr [rdi], rax
+       jne      G_M000_IG35
+ 
+G_M000_IG07:                ;; offset=0x00EE
+       vxorps   xmm0, xmm0, xmm0
+       vcvtsi2sd xmm0, xmm0, r12d
+       vmovsd   xmm1, qword ptr [reloc @RWD00]
+       vmulsd   xmm0, xmm0, xmm1
+       vaddsd   xmm0, xmm0, qword ptr [reloc @RWD08]
+       vsqrtsd  xmm0, xmm0, xmm0
+       vmulsd   xmm0, xmm0, xmm1
+       mov      eax, 1
+       cmp      dword ptr [rdi+0x08], 1
+       jg       SHORT G_M000_IG10
+ 
+G_M000_IG08:                ;; offset=0x011E
+       vmovsd   qword ptr [rbp-0x38], xmm0
+       xor      eax, eax
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], 0
+       jle      SHORT G_M000_IG13
+ 
+G_M000_IG09:                ;; offset=0x012F
+       jmp      G_M000_IG25
+ 
+G_M000_IG10:                ;; offset=0x0134
+       vmulsd   xmm0, xmm0, xmm1
+       vaddsd   xmm0, xmm0, qword ptr [reloc @RWD08]
+       vsqrtsd  xmm0, xmm0, xmm0
+       vmulsd   xmm0, xmm0, xmm1
+       inc      eax
+       cmp      eax, dword ptr [rdi+0x08]
+       jl       SHORT G_M000_IG10
+ 
+G_M000_IG11:                ;; offset=0x014F
+       jmp      SHORT G_M000_IG08
+ 
+G_M000_IG12:                ;; offset=0x0151
+       mov      eax, dword ptr [rbp-0x3C]
+       inc      eax
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], eax
+       jg       G_M000_IG25
+ 
+G_M000_IG13:                ;; offset=0x0163
+       vaddsd   xmm0, xmm0, qword ptr [rbp-0x30]
+       vmovsd   qword ptr [rbp-0x30], xmm0
+       inc      r14d
+       cmp      r14d, dword ptr [rbx+0x58]
+       je       SHORT G_M000_IG16
+ 
+G_M000_IG14:                ;; offset=0x0176
+       inc      r12d
+       cmp      r12d, r15d
+       jl       G_M000_IG06
+ 
+G_M000_IG15:                ;; offset=0x0182
+       jmp      G_M000_IG28
+       align    [5 bytes for IG18]
+ 
+G_M000_IG16:                ;; offset=0x018C
+       xor      r14d, r14d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], 0
+       jle      G_M000_IG21
+ 
+G_M000_IG17:                ;; offset=0x019D
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      r14d, dword ptr [rdi+0x08]
+       jae      G_M000_IG39
+       mov      eax, r14d
+       mov      rdi, gword ptr [rdi+8*rax+0x10]
+       mov      rax, 0x745198BA9798
+       cmp      qword ptr [rdi], rax
+       jne      G_M000_IG37
+       vmovsd   xmm1, qword ptr [rdi+0x10]
+       mov      rax, gword ptr [rdi+0x08]
+       vxorps   xmm2, xmm2, xmm2
+       xor      ecx, ecx
+       mov      rax, gword ptr [rax+0x08]
+       mov      edx, dword ptr [rax+0x10]
+       test     edx, edx
+       jle      SHORT G_M000_IG19
+ 
+G_M000_IG18:                ;; offset=0x01E0
+       mov      rsi, rax
+       cmp      ecx, edx
+       jae      G_M000_IG33
+       mov      rsi, gword ptr [rsi+0x08]
+       cmp      ecx, dword ptr [rsi+0x08]
+       jae      G_M000_IG39
+       mov      r8d, ecx
+       vaddsd   xmm2, xmm2, qword ptr [rsi+8*r8+0x10]
+       inc      ecx
+       cmp      ecx, edx
+       jl       SHORT G_M000_IG18
+ 
+G_M000_IG19:                ;; offset=0x0208
+       vaddsd   xmm1, xmm1, xmm2
+       vmovsd   qword ptr [rdi+0x10], xmm1
+       xor      rax, rax
+       mov      gword ptr [rdi+0x08], rax
+ 
+G_M000_IG20:                ;; offset=0x0217
+       inc      r14d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], r14d
+       jg       G_M000_IG17
+ 
+G_M000_IG21:                ;; offset=0x0228
+       inc      r13d
+       xor      r14d, r14d
+       xor      eax, eax
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], 0
+       jle      G_M000_IG14
+ 
+G_M000_IG22:                ;; offset=0x023E
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      eax, dword ptr [rdi+0x08]
+       jae      G_M000_IG39
+       mov      dword ptr [rbp-0x40], eax
+       mov      ecx, eax
+       mov      rcx, gword ptr [rdi+8*rcx+0x10]
+       mov      gword ptr [rbp-0x50], rcx
+       mov      rdi, 0x745198BA9798
+       cmp      qword ptr [rcx], rdi
+       jne      G_M000_IG38
+       mov      rdi, 0x745198BABC50
+       call     CORINFO_HELP_NEWSFAST
+       mov      gword ptr [rbp-0x60], rax
+       mov      rdi, 0x745198BAC2D8
+       call     CORINFO_HELP_NEWSFAST
+       mov      rdi, 0x745196802030
+       mov      gword ptr [rax+0x08], rdi
+       mov      rcx, gword ptr [rbp-0x60]
+       lea      rdi, bword ptr [rcx+0x08]
+       mov      rsi, rax
+       call     CORINFO_HELP_ASSIGN_REF
+       mov      rax, gword ptr [rbp-0x50]
+       lea      rdi, bword ptr [rax+0x08]
+       mov      rsi, gword ptr [rbp-0x60]
+       call     CORINFO_HELP_ASSIGN_REF
+ 
+G_M000_IG23:                ;; offset=0x02BD
+       mov      eax, dword ptr [rbp-0x40]
+       inc      eax
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], eax
+       jg       G_M000_IG22
+ 
+G_M000_IG24:                ;; offset=0x02CF
+       jmp      G_M000_IG14
+ 
+G_M000_IG25:                ;; offset=0x02D4
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      eax, dword ptr [rdi+0x08]
+       jae      G_M000_IG39
+       mov      dword ptr [rbp-0x3C], eax
+       mov      ecx, eax
+       mov      rdi, gword ptr [rdi+8*rcx+0x10]
+       mov      rcx, 0x745198BA9798
+       cmp      qword ptr [rdi], rcx
+       jne      G_M000_IG36
+       mov      rdi, gword ptr [rdi+0x08]
+       mov      rdi, gword ptr [rdi+0x08]
+       inc      dword ptr [rdi+0x14]
+       mov      rcx, gword ptr [rdi+0x08]
+       mov      edx, dword ptr [rdi+0x10]
+       cmp      dword ptr [rcx+0x08], edx
+       jbe      SHORT G_M000_IG27
+ 
+G_M000_IG26:                ;; offset=0x0315
+       lea      esi, [rdx+0x01]
+       mov      dword ptr [rdi+0x10], esi
+       mov      edi, edx
+       vmovsd   qword ptr [rcx+8*rdi+0x10], xmm0
+       jmp      G_M000_IG12
+ 
+G_M000_IG27:                ;; offset=0x0328
+       call     [System.Collections.Generic.List`1[double]:AddWithResize(double):this]
+       vmovsd   xmm0, qword ptr [rbp-0x38]
+       jmp      G_M000_IG12
+ 
+G_M000_IG28:                ;; offset=0x0338
+       test     r14d, r14d
+       jle      SHORT G_M000_IG31
+ 
+G_M000_IG29:                ;; offset=0x033D
+       xor      r15d, r15d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], 0
+       jle      SHORT G_M000_IG31
+ 
+G_M000_IG30:                ;; offset=0x034A
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      r15d, dword ptr [rdi+0x08]
+       jae      G_M000_IG39
+       mov      esi, r15d
+       mov      rdi, gword ptr [rdi+8*rsi+0x10]
+       mov      esi, r13d
+       mov      r11, 0x745197C700F8
+       call     [r11]ISide:BlockEnd(int):this
+       inc      r15d
+       mov      rdi, gword ptr [rbx+0x10]
+       cmp      dword ptr [rdi+0x08], r15d
+       jg       SHORT G_M000_IG30
+ 
+G_M000_IG31:                ;; offset=0x037D
+       vmovsd   xmm0, qword ptr [rbp-0x30]
+ 
+G_M000_IG32:                ;; offset=0x0382
+       add      rsp, 56
+       pop      rbx
+       pop      r12
+       pop      r13
+       pop      r14
+       pop      r15
+       pop      rbp
+       ret      
+ 
+G_M000_IG33:                ;; offset=0x0391
+       call     [System.ThrowHelper:ThrowArgumentOutOfRange_IndexMustBeLessException()]
+       int3     
+ 
+G_M000_IG34:                ;; offset=0x0398
+       mov      rax, gword ptr [rbp-0x48]
+       mov      rdi, rax
+       mov      r11, 0x745197C700D0
+       xor      esi, esi
+       call     [r11]ISide:BlockStart(int):this
+       jmp      G_M000_IG04
+ 
+G_M000_IG35:                ;; offset=0x03B3
+       mov      esi, r12d
+       mov      r11, 0x745197C700D8
+       call     [r11]ICompute:Compute(int):double:this
+       jmp      G_M000_IG08
+ 
+G_M000_IG36:                ;; offset=0x03C8
+       mov      esi, r12d
+       mov      r11, 0x745197C700E0
+       call     [r11]ISide:Step(int,double):this
+       vmovsd   xmm0, qword ptr [rbp-0x38]
+       jmp      G_M000_IG12
+ 
+G_M000_IG37:                ;; offset=0x03E2
+       mov      esi, r13d
+       mov      r11, 0x745197C700E8
+       call     [r11]ISide:BlockEnd(int):this
+       jmp      G_M000_IG20
+ 
+G_M000_IG38:                ;; offset=0x03F7
+       mov      rcx, gword ptr [rbp-0x50]
+       mov      rdi, rcx
+       mov      esi, r13d
+       mov      r11, 0x745197C700F0
+       call     [r11]ISide:BlockStart(int):this
+       jmp      G_M000_IG23
+ 
+G_M000_IG39:                ;; offset=0x0413
+       call     CORINFO_HELP_RNGCHKFAIL
+       int3     
+ 
+RWD00  	dq	3FF000001AD7F29Bh	;    1.0000001
+RWD08  	dq	3FF0000000000000h	;            1
+
+; Total bytes of code 1049
+

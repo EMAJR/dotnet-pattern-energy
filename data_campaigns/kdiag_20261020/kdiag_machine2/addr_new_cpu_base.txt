@@ -1,0 +1,2 @@
+0x7afb0e913640 1f1 instance float64 [proto] Composed::Run(int32)[Optimized]
+0x7afb0e913860 58 instance float64 [proto] KernelCpu::Compute(int32)[Optimized]

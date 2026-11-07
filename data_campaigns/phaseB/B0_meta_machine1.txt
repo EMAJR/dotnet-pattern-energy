@@ -1,0 +1,75 @@
+### date
+2026-10-17T20:08:01+00:00
+### host / kernel
+machine1
+Linux machine1 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+### os
+NAME="Ubuntu"
+VERSION="24.04.4 LTS (Noble Numbat)"
+### virtualisation
+none
+### cpu
+CPU(s):                                  4
+Model name:                              Intel(R) Core(TM) i7-5600U CPU @ 2.60GHz
+Thread(s) per core:                      2
+Core(s) per socket:                      2
+Socket(s):                               1
+CPU(s) scaling MHz:                      78%
+CPU max MHz:                             3200.0000
+CPU min MHz:                             500.0000
+L1d cache:                               64 KiB (2 instances)
+L2 cache:                                512 KiB (2 instances)
+L3 cache:                                4 MiB (1 instance)
+### smt
+1
+### frequency policy (cpu0 and pinned core 3)
+cpu0 governor=performance min=500000 max=2500000 hw_max=3200000 cur=2494202
+cpu3 governor=performance min=500000 max=2500000 hw_max=3200000 cur=2494217
+intel_pstate status=passive no_turbo=1 min_perf_pct=15 max_perf_pct=100
+### RAPL zones present (all levels)
+intel-rapl:0  name=package-0  energy_uj=readable
+intel-rapl:0:0  name=core  energy_uj=readable
+intel-rapl:0:1  name=uncore  energy_uj=readable
+intel-rapl:0:2  name=dram  energy_uj=readable
+### RAPL zones READ BY THE BENCH (top level, name package* or dram)
+READ: intel-rapl:0 name=package-0
+### memory subsystem (the memory-bound baseline changed by 21 % between two M1 campaigns)
+THP enabled=always [madvise] never defrag=always defer defer+madvise [madvise] never
+MemTotal:        8003528 kB
+HugePages_Total:       0
+Hugepagesize:       2048 kB
+	Configured Memory Speed: 1600 MT/s
+	Speed: 1600 MT/s
+mitigations:       1 KVM: Mitigation: VMX disabled;      2 Mitigation: Clear CPU buffers; SMT vulnerable;      1 Mitigation: IBPB before exit to userspace;      1 Mitigation: Microcode;      1 Mitigation: PTE Inversion; VMX: conditional cache flushes, SMT vulnerable;      1 Mitigation: PTI;      1 Mitigation: Retpolines; IBPB: conditional; IBRS_FW; STIBP: conditional; RSB filling; PBRSB-eIBRS: Not affected; BHI: Not affected;      1 Mitigation: Speculative Store Bypass disabled via prctl;      1 Mitigation: usercopy/swapgs barriers and __user pointer sanitization;      6 Not affected;      1 Unknown: No mitigations;
+### dotnet
+8.0.131
+Microsoft.AspNetCore.App 8.0.31 [/usr/lib/dotnet/shared/Microsoft.AspNetCore.App]
+Microsoft.NETCore.App 8.0.31 [/usr/lib/dotnet/shared/Microsoft.NETCore.App]
+### runtimeconfig of the binary
+{
+  "runtimeOptions": {
+    "tfm": "net8.0",
+    "framework": {
+      "name": "Microsoft.NETCore.App",
+      "version": "8.0.0"
+    },
+    "configProperties": {
+      "System.GC.Concurrent": false,
+      "System.GC.Server": false,
+      "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,
+      "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false,
+      "System.Runtime.TieredCompilation": false
+    }
+  }
+}### DOTNET_ environment
+DOTNET_BUNDLE_EXTRACT_BASE_DIR=/home/user/.cache/dotnet_bundle_extract
+### temperature
+acpitz=40000
+pch_wildcat_point=41500
+iwlwifi_1=43000
+x86_pkg_temp=45000
+### temperature after
+acpitz=38000
+pch_wildcat_point=39000
+iwlwifi_1=41000
+x86_pkg_temp=43000

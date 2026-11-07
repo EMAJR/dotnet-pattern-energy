@@ -1,0 +1,1 @@
+config=ObMe regime=cpu K=20 kernel_rep=1 time_s=0.059 energy_J=0.359 power_W=6.036 j_dyn_per_op=1.7944E-002 alloc_per_iter=39593 gen0=0 gen1=0 gen2=0 gc_pause_ms=0.000 checksum=59628711.743260 topo=0 dup=1 warmup=300 settle_ms=1500 jit_during=0 jit_total=26

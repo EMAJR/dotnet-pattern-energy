@@ -1,0 +1,2 @@
+0x7ad864f32e00 1f1 instance float64 [proto] Composed::Run(int32)[Optimized]
+0x7ad864f33020 4d instance float64 [proto] KernelMem::Compute(int32)[Optimized]

@@ -1,0 +1,1 @@
+config=base regime=cpu K=5 kernel_rep=1 time_s=0.009 energy_J=0.041 power_W=4.616 j_dyn_per_op=8.1542E-003 alloc_per_iter=1574 gen0=0 gen1=0 gen2=0 gc_pause_ms=0.000 checksum=59628711.743260

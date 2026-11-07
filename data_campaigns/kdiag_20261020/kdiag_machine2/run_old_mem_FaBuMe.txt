@@ -1,0 +1,1 @@
+config=FaBuMe regime=mem K=5 time_s=0.111 energy_J=0.554 power_W=5.006 j_dyn_per_op=1.1074E-001 alloc_per_iter=3292539 gen0=3 gen1=0 gen2=0 checksum=59628711.743260

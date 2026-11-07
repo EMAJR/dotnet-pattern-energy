@@ -1,0 +1,8 @@
+date: 05 شتنبر, 2026 +01 18:04:37
+Architecture:                            x86_64
+CPU(s):                                  4
+Vendor ID:                               GenuineIntel
+Model name:                              Intel(R) Core(TM) i7-5600U CPU @ 2.60GHz
+CPU(s) scaling MHz:                      82%
+Linux machine1 6.8.0-136-generic #136-Ubuntu SMP PREEMPT_DYNAMIC Wed Jul  1 21:53:05 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+8.0.130

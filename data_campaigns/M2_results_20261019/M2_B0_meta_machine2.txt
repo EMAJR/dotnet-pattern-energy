@@ -1,0 +1,84 @@
+### date
+2026-10-19T18:45:43+00:00
+### host / kernel
+machine2
+Linux machine2 6.8.0-146-generic #146-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep  3 16:12:30 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+### os
+NAME="Ubuntu"
+VERSION="24.04.5 LTS (Noble Numbat)"
+### virtualisation
+none
+### cpu
+CPU(s):                                  8
+Model name:                              11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz
+Thread(s) per core:                      2
+Core(s) per socket:                      4
+Socket(s):                               1
+CPU(s) scaling MHz:                      20%
+CPU max MHz:                             4400.0000
+CPU min MHz:                             400.0000
+L1d cache:                               192 KiB (4 instances)
+L2 cache:                                5 MiB (4 instances)
+L3 cache:                                8 MiB (1 instance)
+### smt
+1
+### frequency policy (cpu0 and pinned core 7)
+cpu0 governor=performance min=400000 max=1500000 hw_max=4400000 cur=400000
+cpu7 governor=performance min=400000 max=1500000 hw_max=4400000 cur=780085
+intel_pstate status=active no_turbo=1 min_perf_pct=9 max_perf_pct=100
+### RAPL zones present (all levels)
+intel-rapl:0  name=package-0  energy_uj=readable
+intel-rapl:0:0  name=core  energy_uj=readable
+intel-rapl:0:1  name=uncore  energy_uj=readable
+intel-rapl:1  name=psys  energy_uj=readable
+intel-rapl-mmio:0  name=package-0  energy_uj=readable
+### RAPL zones READ BY THE BENCH (top level, name package* or dram)
+READ: intel-rapl:0 name=package-0
+skip: intel-rapl:1 name=psys
+### memory subsystem (the memory-bound baseline changed by 21 % between two M1 campaigns)
+THP enabled=always [madvise] never defrag=always defer defer+madvise [madvise] never
+MemTotal:       15744176 kB
+HugePages_Total:       0
+Hugepagesize:       2048 kB
+	Configured Memory Speed: 3200 MT/s
+	Configured Voltage: 1.2 V
+	Speed: 3200 MT/s
+mitigations:       1 Mitigation: Aligned branch/return thunks;      1 Mitigation: Enhanced / Automatic IBRS; IBPB: conditional; PBRSB-eIBRS: SW sequence; BHI: SW loop, KVM: SW loop;      1 Mitigation: Microcode;      1 Mitigation: Speculative Store Bypass disabled via prctl;      1 Mitigation: usercopy/swapgs barriers and __user pointer sanitization;     12 Not affected;
+### dotnet
+8.0.131
+Microsoft.AspNetCore.App 6.0.36 [/usr/lib/dotnet/shared/Microsoft.AspNetCore.App]
+Microsoft.AspNetCore.App 8.0.31 [/usr/lib/dotnet/shared/Microsoft.AspNetCore.App]
+Microsoft.NETCore.App 6.0.36 [/usr/lib/dotnet/shared/Microsoft.NETCore.App]
+Microsoft.NETCore.App 8.0.31 [/usr/lib/dotnet/shared/Microsoft.NETCore.App]
+### runtimeconfig of the binary
+{
+  "runtimeOptions": {
+    "tfm": "net8.0",
+    "framework": {
+      "name": "Microsoft.NETCore.App",
+      "version": "8.0.0"
+    },
+    "configProperties": {
+      "System.GC.Concurrent": false,
+      "System.GC.Server": false,
+      "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,
+      "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false,
+      "System.Runtime.TieredCompilation": false
+    }
+  }
+}### DOTNET_ environment
+(none)
+### temperature
+INT3400 Thermal=20000
+TMEM=32050
+TSKN=42050
+NGFF=38050
+TCPU=44050
+iwlwifi_1=34000
+### temperature after
+INT3400 Thermal=20000
+TMEM=31050
+TSKN=39050
+NGFF=37050
+TCPU=40050
+iwlwifi_1=34000

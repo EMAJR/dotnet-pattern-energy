@@ -1,0 +1,186 @@
+
+=================== 0. pre-flight checks (18:45:29) ===================
+bare metal, RAPL, dotnet 8.0.131, perf, cpupower, python3, AC power: OK
+
+=================== 1. patch + build + equivalence (18:45:29) ===================
+Program.cs already patched for phase B (runktopo present). Nothing to do.
+ALL EQUIVALENT (rep=1): 66 configs preserve behaviour (cpu+mem).
+ALL EQUIVALENT (topo): 340 config x topology x dup combinations preserve behaviour (cpu+mem).
+sleep inhibited during the run
+
+=================== B0_metadata (18:45:40) ===================
+governor=performance on every core | no_turbo=1 | pinned core=7
+metadata -> B0_meta_machine2.txt
+### idle package power, 3 x 60 s (do not touch the machine)
+  idle run 1: idle: energy_J=109.071 time_s=60.000 idle_power_W=1.8178
+  idle run 2: idle: energy_J=89.112 time_s=60.000 idle_power_W=1.4852
+  idle run 3: idle: energy_J=119.259 time_s=60.000 idle_power_W=1.9876
+=== DONE. Send me B0_meta_machine2.txt and B0_idle_machine2.csv ===
+>> B0_metadata OK
+
+=================== B4_topology (18:49:14) ===================
+regime=cpu -> B4_energy.csv, B4_perf.csv
+perf events: cycles,instructions,branches,branch-misses,L1-dcache-load-misses,dTLB-load-misses
+governor=performance on every core | no_turbo=1 | pinned core=7
+ALL EQUIVALENT (topo): 340 config x topology x dup combinations preserve behaviour (cpu+mem).
+=== 1. energy + time, paired per (config, topology) (~35 min) ===
+  [energy] pass 1/8 (18:53:47)
+  [energy] pass 2/8 (18:58:14)
+  [energy] pass 3/8 (19:02:41)
+  [energy] pass 4/8 (19:07:07)
+  [energy] pass 5/8 (19:11:33)
+  [energy] pass 6/8 (19:16:00)
+  [energy] pass 7/8 (19:20:26)
+  [energy] pass 8/8 (19:24:53)
+=== 2. hardware counters (~20 min) ===
+  [perf] pass 1/3 (19:30:36)
+  [perf] pass 2/3 (19:36:17)
+  [perf] pass 3/3 (19:41:58)
+=== SUMMARY ===
+comp    | topo0: dE / dT / instr   topo1: dE / dT / instr   topo2: dE / dT / instr
+FaBu    |    +58.2 /  +59.0 /  25.1    -10.4 /   -9.5 /   0.1     +2.8 /   -0.7 /   0.1
+BuMe    |    +47.4 /  +58.0 /  25.2    -17.1 /  -15.3 /   0.1    +12.1 /   +8.9 /   0.1
+BuOb    |    +50.8 /  +59.7 /  25.1     +0.7 /   -0.9 /  -0.0     +0.7 /   -1.0 /   0.0
+ObMe    |    +53.4 /  +56.1 /  25.1     -9.8 /  -15.2 /  -0.0     +3.1 /   +1.4 /  -0.0
+FaBuMe  |    +96.8 / +104.4 /  39.2    -22.6 /  -23.0 /   0.0     +7.3 /   +6.5 /   0.0
+BuObMe  |   +100.7 / +108.7 /  39.2    -22.2 /  -17.3 /   0.1     +7.2 /   +8.7 /   0.1
+StDeAd  |    +18.9 /  +15.5 /   0.0     +0.6 /   -0.1 /  -0.0    -34.2 /  -35.5 /  -0.0
+
+T1: topo 1-2 instr ~<=3 and dE collapses | T2: instr drops, dE stays | T3: instr does not drop
+=== DONE. Send me B4_energy.csv and B4_perf.csv ===
+>> B4_topology OK
+
+=================== replication (19:41:58) ===================
+=== 1. Machine info ===
+date: 19 أكتوبر, 2026 +00 19:41:58
+Architecture:                            x86_64
+CPU(s):                                  8
+Vendor ID:                               GenuineIntel
+Model name:                              11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz
+CPU(s) scaling MHz:                      29%
+Linux machine2 6.8.0-146-generic #146-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep  3 16:12:30 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+8.0.131
+=== 2. RAPL check ===
+RAPL OK (energy_uj=220749739505)
+=== 3. Lock environment (BLOQUANT) ===
+Gouverneur verrouille: performance  |  turbo: 1
+core epingle = 7
+=== 4. Build + equiv ===
+ALL EQUIVALENT (rep=1): 66 configs preserve behaviour (cpu+mem).
+=== 5. Campagne CPU (~40 min) ===
+  [cpu] pass 1/15 (19:45:41)
+  [cpu] pass 2/15 (19:49:20)
+  [cpu] pass 3/15 (19:53:00)
+  [cpu] pass 4/15 (19:56:39)
+  [cpu] pass 5/15 (20:00:19)
+  [cpu] pass 6/15 (20:03:59)
+  [cpu] pass 7/15 (20:07:40)
+  [cpu] pass 8/15 (20:11:21)
+  [cpu] pass 9/15 (20:15:00)
+  [cpu] pass 10/15 (20:18:40)
+  [cpu] pass 11/15 (20:22:19)
+  [cpu] pass 12/15 (20:25:59)
+  [cpu] pass 13/15 (20:29:39)
+  [cpu] pass 14/15 (20:33:18)
+  [cpu] pass 15/15 (20:36:58)
+=== 6. Campagne MEMOIRE (~40 min) ===
+  [mem] pass 1/15 (20:45:01)
+  [mem] pass 2/15 (20:52:57)
+  [mem] pass 3/15 (21:00:53)
+  [mem] pass 4/15 (21:08:51)
+  [mem] pass 5/15 (21:16:46)
+  [mem] pass 6/15 (21:24:42)
+  [mem] pass 7/15 (21:32:43)
+  [mem] pass 8/15 (21:40:43)
+  [mem] pass 9/15 (21:48:44)
+  [mem] pass 10/15 (21:56:43)
+  [mem] pass 11/15 (22:04:44)
+  [mem] pass 12/15 (22:12:46)
+  [mem] pass 13/15 (22:20:46)
+  [mem] pass 14/15 (22:28:42)
+  [mem] pass 15/15 (22:36:38)
+=== 7. Verdict (delta des combos cles) ===
+  combo      delta_CPU        delta_MEM
+  FaBuMe    +104.9% (2SE 4.4)  +23.9% (2SE 11.1)
+  BuObMe    +91.9% (2SE 6.8)   +34.0% (2SE 13.8)
+  BuMe      +54.0% (2SE 13.0)  +24.5% (2SE 10.6)
+  ObMe      +54.5% (2SE 4.7)   +23.7% (2SE 4.6)
+  FaOb      +49.4% (2SE 4.2)   +31.4% (2SE 7.6)
+  StDeAd    +18.3% (2SE 4.9)    -9.9% (2SE 15.8)
+
+=> ATTENDU si l'effet se replique : combos de tas TRES positifs en CPU (dizaines de %),
+   petits en MEMOIRE, et StDeAd (controle) ~0 dans les deux.
+=== FINI. Renvoie : repl_cpu_time.csv, repl_mem_time.csv, machine_info.txt ===
+>> replication OK
+
+=================== B1_weights (22:36:38) ===================
+perf events: cycles,instructions,branches,branch-misses,L1-dcache-load-misses,dTLB-load-misses
+governor=performance on every core | no_turbo=1 | pinned core=7
+ALL EQUIVALENT (rep=1): 66 configs preserve behaviour (cpu+mem).
+ALL EQUIVALENT (rep=4): 66 configs preserve behaviour (cpu+mem).
+ALL EQUIVALENT (rep=8): 66 configs preserve behaviour (cpu+mem).
+ALL EQUIVALENT (rep=16): 66 configs preserve behaviour (cpu+mem).
+ALL EQUIVALENT (rep=32): 66 configs preserve behaviour (cpu+mem).
+  pass 1/5  w=8  (22:38:51)
+  pass 1/5  w=32  (22:42:38)
+  pass 1/5  w=1  (22:46:49)
+  pass 1/5  w=16  (22:49:20)
+  pass 1/5  w=4  (22:51:14)
+  pass 2/5  w=8  (22:53:12)
+  pass 2/5  w=32  (22:56:58)
+  pass 2/5  w=1  (23:01:09)
+  pass 2/5  w=4  (23:03:06)
+  pass 2/5  w=16  (23:05:36)
+  pass 3/5  w=4  (23:07:31)
+  pass 3/5  w=32  (23:11:17)
+  pass 3/5  w=1  (23:15:28)
+  pass 3/5  w=8  (23:17:26)
+  pass 3/5  w=16  (23:19:55)
+  pass 4/5  w=32  (23:23:42)
+  pass 4/5  w=4  (23:25:37)
+  pass 4/5  w=1  (23:29:47)
+  pass 4/5  w=16  (23:32:17)
+  pass 4/5  w=8  (23:34:16)
+  pass 5/5  w=32  (23:38:02)
+  pass 5/5  w=1  (23:42:13)
+  pass 5/5  w=4  (23:44:07)
+  pass 5/5  w=8  (23:46:05)
+  pass 5/5  w=16  (23:48:34)
+=== SUMMARY (I will redo the full analysis on the CSV) ===
+comp       w     instr/iter    brmiss/iter   d_time % d_energy %
+FaBuMe     1          39.22         -0.000     +117.2     +106.0
+FaBuMe     4          39.20          0.001      +66.4      +64.5
+FaBuMe     8          39.19          0.002      +42.6      +43.5
+FaBuMe    16          39.33          0.001      +39.6      +41.8
+FaBuMe    32          39.06          0.003       +4.1       +7.2
+
+BuObMe     1          39.25          0.001     +111.4      +98.4
+BuObMe     4          39.21         -0.000      +72.1      +68.1
+BuObMe     8          39.20          0.002      +42.2      +44.2
+BuObMe    16          39.35          0.000      +40.0      +41.0
+BuObMe    32          39.03          0.006       +3.5       +5.2
+
+BuMe       1          25.23          0.002      +63.8      +56.1
+BuMe       4          25.20         -0.000      +33.6      +36.3
+BuMe       8          25.12         -0.001       +3.2       +7.7
+BuMe      16          25.36          0.001      +38.6      +38.6
+BuMe      32          25.05          0.001       +2.8       +4.5
+
+ObMe       1          25.07         -0.000      +56.4      +53.4
+ObMe       4          25.06         -0.000      +36.6      +36.2
+ObMe       8          25.08         -0.001      +23.9      +23.5
+ObMe      16          25.17          0.000      +18.4      +18.9
+ObMe      32          25.13          0.003       +3.5       +4.5
+
+StDeAd     1           0.01          0.001      +15.7      +16.0
+StDeAd     4           0.01         -0.000       +2.5       +1.2
+StDeAd     8          -0.01          0.000       -7.9       -6.0
+StDeAd    16           0.21          0.000      +25.4      +27.4
+StDeAd    32           0.05          0.000       +0.1       +4.3
+
+Reading: compare instr/iter across w for each composition.
+  ~constant + d_time falling slower than the signatures -> H1 ; growing -> H2 ; zig-zag -> H3 (run B5).
+=== DONE. Send me B1_perf_weights.csv ===
+>> B1_weights OK
+
+=================== 6. packaging (23:48:34) ===================

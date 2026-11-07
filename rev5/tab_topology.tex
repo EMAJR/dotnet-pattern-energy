@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\caption{Invocation-topology manipulation ($W_{\text{CPU}}$, 8 repetitions, first campaign on each machine). The same allocating layers are invoked through one shared interface call site or through one interface call site per layer; each configuration is compared with the baseline of the same topology. $\delta$ in points of baseline energy with $2\cdot\mathrm{SE}$ in brackets ($^{\ast}$: both criteria of Section~\ref{subsec:statistical_analysis}; $^{\circ}$: $z$-rule only). \emph{instr.}: retired-instruction surplus per iteration at the shared site (Machine~1; Machine~2 identical to within $0.1$); through dedicated sites it is $0.0$ to $0.1$ on both machines. \emph{Contrast}: shared minus dedicated, the causal estimand. The direct-typed-call variant and the second campaign on each machine are reported in the text.}
+\label{tab:topology}
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+& & \multicolumn{3}{c}{\textbf{Machine~1}} & \multicolumn{3}{c}{\textbf{Machine~2}}\\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+\textbf{Composition} & \textbf{instr.} & \textbf{Shared} & \textbf{Per layer} & \textbf{Contrast} & \textbf{Shared} & \textbf{Per layer} & \textbf{Contrast}\\
+\midrule
+\texttt{FaBu} & 25.1 & $+42.0^{\ast}$ {\scriptsize[9.0]} & $-7.9$ {\scriptsize[8.7]} & $+49.9$ & $+58.2^{\circ}$ {\scriptsize[14.3]} & $-10.4$ {\scriptsize[8.0]} & $+68.6$\\
+\texttt{BuMe} & 25.1 & $+43.7^{\ast}$ {\scriptsize[8.3]} & $+1.2$ {\scriptsize[9.7]} & $+42.5$ & $+47.4^{\ast}$ {\scriptsize[8.7]} & $-17.1^{\ast}$ {\scriptsize[6.2]} & $+64.6$\\
+\texttt{BuOb} & 25.0 & $+35.1^{\ast}$ {\scriptsize[8.4]} & $+3.9$ {\scriptsize[8.4]} & $+31.2$ & $+50.8^{\ast}$ {\scriptsize[9.6]} & $+0.7$ {\scriptsize[5.9]} & $+50.1$\\
+\texttt{ObMe} & 25.0 & $+36.0^{\ast}$ {\scriptsize[8.2]} & $+0.9$ {\scriptsize[3.3]} & $+35.1$ & $+53.4^{\ast}$ {\scriptsize[7.7]} & $-9.8^{\ast}$ {\scriptsize[4.2]} & $+63.2$\\
+\texttt{FaBuMe} & 39.2 & $+70.7^{\ast}$ {\scriptsize[14.3]} & $+7.8$ {\scriptsize[8.5]} & $+62.8$ & $+96.8^{\ast}$ {\scriptsize[13.2]} & $-22.6^{\ast}$ {\scriptsize[6.7]} & $+119.3$\\
+\texttt{BuObMe} & 39.2 & $+65.1^{\circ}$ {\scriptsize[26.1]} & $+2.5$ {\scriptsize[10.7]} & $+62.5$ & $+100.7^{\ast}$ {\scriptsize[9.7]} & $-22.2^{\ast}$ {\scriptsize[6.7]} & $+123.0$\\
+\midrule
+\texttt{StDeAd} \emph{(control)} & 0.0 & $+1.9$ {\scriptsize[12.2]} & $+8.5$ {\scriptsize[7.0]} & $-6.6$ & $+18.9^{\ast}$ {\scriptsize[5.9]} & $+0.6$ {\scriptsize[5.8]} & $+18.3$\\
+\bottomrule
+\end{tabular}}
+\end{table*}

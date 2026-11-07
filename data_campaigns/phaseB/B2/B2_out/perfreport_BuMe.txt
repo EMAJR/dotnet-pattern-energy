@@ -1,0 +1,37 @@
+     5.68%  memfd:doublemapper (deleted)  [.] 0x0000000000165832                                                                                                 -      -            
+     5.46%  memfd:doublemapper (deleted)  [.] 0x0000000000165303                                                                                                 -      -            
+     3.50%  memfd:doublemapper (deleted)  [.] 0x0000000000165790                                                                                                 -      -            
+     3.44%  memfd:doublemapper (deleted)  [.] 0x00000000001652d1                                                                                                 -      -            
+     3.40%  memfd:doublemapper (deleted)  [.] 0x0000000000165587                                                                                                 -      -            
+     3.27%  memfd:doublemapper (deleted)  [.] 0x00000000001655f0                                                                                                 -      -            
+     3.24%  memfd:doublemapper (deleted)  [.] 0x000000000016561e                                                                                                 -      -            
+     3.16%  memfd:doublemapper (deleted)  [.] 0x00000000001655f1                                                                                                 -      -            
+     3.05%  libc.so.6                     [.] __memset_avx2_unaligned_erms_rtm                                                                                   -      -            
+     2.71%  memfd:doublemapper (deleted)  [.] 0x00000000001652e3                                                                                                 -      -            
+     2.71%  memfd:doublemapper (deleted)  [.] 0x0000000000165421                                                                                                 -      -            
+     2.63%  memfd:doublemapper (deleted)  [.] 0x000000000016532e                                                                                                 -      -            
+     2.62%  memfd:doublemapper (deleted)  [.] 0x0000000000161a08                                                                                                 -      -            
+     2.60%  memfd:doublemapper (deleted)  [.] 0x0000000000165628                                                                                                 -      -            
+     2.53%  memfd:doublemapper (deleted)  [.] 0x00000000001652f6                                                                                                 -      -            
+     2.46%  memfd:doublemapper (deleted)  [.] 0x00000000001619ee                                                                                                 -      -            
+     2.42%  memfd:doublemapper (deleted)  [.] 0x00000000001653c1                                                                                                 -      -            
+     2.27%  memfd:doublemapper (deleted)  [.] 0x0000000000161d2a                                                                                                 -      -            
+     2.27%  memfd:doublemapper (deleted)  [.] 0x0000000000161a12                                                                                                 -      -            
+     2.17%  memfd:doublemapper (deleted)  [.] 0x00000000001619f8                                                                                                 -      -            
+     2.09%  memfd:doublemapper (deleted)  [.] 0x0000000000165312                                                                                                 -      -            
+     2.08%  memfd:doublemapper (deleted)  [.] 0x0000000000165561                                                                                                 -      -            
+     2.04%  memfd:doublemapper (deleted)  [.] 0x0000000000165602                                                                                                 -      -            
+     2.04%  memfd:doublemapper (deleted)  [.] 0x00000000001619d3                                                                                                 -      -            
+     1.98%  memfd:doublemapper (deleted)  [.] 0x00000000001652ef                                                                                                 -      -            
+     1.34%  memfd:doublemapper (deleted)  [.] 0x00000000001652c7                                                                                                 -      -            
+     1.33%  memfd:doublemapper (deleted)  [.] 0x0000000000165610                                                                                                 -      -            
+     1.30%  memfd:doublemapper (deleted)  [.] 0x0000000000165318                                                                                                 -      -            
+     1.19%  memfd:doublemapper (deleted)  [.] 0x00000000001619e5                                                                                                 -      -            
+     1.05%  memfd:doublemapper (deleted)  [.] 0x00000000001619de                                                                                                 -      -            
+     1.04%  memfd:doublemapper (deleted)  [.] 0x0000000000165577                                                                                                 -      -            
+     0.95%  memfd:doublemapper (deleted)  [.] 0x0000000000165567                                                                                                 -      -            
+     0.87%  memfd:doublemapper (deleted)  [.] 0x0000000000165306                                                                                                 -      -            
+     0.80%  memfd:doublemapper (deleted)  [.] 0x0000000000161d3e                                                                                                 -      -            
+     0.79%  libc.so.6                     [.] __memmove_avx_unaligned_erms_rtm                                                                                   -      -            
+     0.76%  memfd:doublemapper (deleted)  [.] 0x000000000016558b                                                                                                 -      -            
+     0.71%  memfd:doublemapper (deleted)  [.] 0x00000000001655fb                                                                                                 -      -            

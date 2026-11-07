@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: >-
+  Replication package for "The Energy of Design-Pattern Compositions:
+  A Controlled Study of Super-Additive Energy Interactions at Shared
+  Polymorphic Call Sites in .NET 8"
+message: If you use this package, please cite the associated paper.
+type: dataset
+abstract: >-
+  Benchmark suite, raw per-run energy, time and hardware-counter
+  measurements, JIT and kernel disassemblies, and analysis scripts for a
+  controlled study of 26 multi-pattern compositions of seven Gang of Four
+  design patterns in .NET 8, measured on two Intel machines under a
+  compute-bound and a scattered memory-access workload.
+keywords:
+  - green software engineering
+  - design patterns
+  - software energy consumption
+  - interface dispatch
+  - Intel RAPL
+  - .NET 8
+  - empirical software engineering
+license: MIT
+license-url: https://opensource.org/licenses/MIT
+authors:
+  - name: Author list withheld for anonymous review
+# For the camera-ready version, replace the entry above with one
+# family-names / given-names pair per author, and add version,
+# date-released, doi and repository-code once the package is archived
+# on Zenodo.

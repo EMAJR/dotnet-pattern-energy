@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Optimize>true</Optimize>
+    <!-- Workstation GC (non-concurrent) for deterministic energy + GC-proxy measurement -->
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+    <!-- Tiered JIT OFF: avoids re-compilation transients during measurement (validated: it
+         inflated composite configs and produced spurious super-additivity). Equivalent to
+         DOTNET_TieredCompilation=0 at runtime. -->
+    <TieredCompilation>false</TieredCompilation>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>proto</AssemblyName>
+  </PropertyGroup>
+</Project>

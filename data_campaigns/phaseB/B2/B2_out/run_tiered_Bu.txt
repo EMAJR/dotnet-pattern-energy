@@ -1,0 +1,1 @@
+config=Bu regime=cpu K=20 kernel_rep=1 time_s=0.044 energy_J=0.246 power_W=5.623 j_dyn_per_op=1.2286E-002 alloc_per_iter=3250508 gen0=31 gen1=0 gen2=0 gc_pause_ms=2.641 checksum=59628711.743260 topo=0 dup=1 warmup=300 settle_ms=1500 jit_during=0 jit_total=92

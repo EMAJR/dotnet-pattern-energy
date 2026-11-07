@@ -1,0 +1,15 @@
+The measurement data and the documentation in this package -- everything under
+data_campaigns/ and rev5/, together with README.md, DATA_DICTIONARY.md and
+ENVIRONMENT.md -- are licensed under the Creative Commons Attribution 4.0
+International licence (CC BY 4.0).
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit to the authors of
+"The Energy of Design-Pattern Compositions", link to the licence, and indicate
+whether changes were made.
+
+Full text: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary:   https://creativecommons.org/licenses/by/4.0/
+
+The source code in code/, scripts/ and the analyse_*.py and make_rev5_tex.py
+scripts is covered by the MIT licence instead; see LICENSE.
